@@ -50,6 +50,9 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoic2JmNjIiLCJhIjoiY2xuMXZhaTZkMDIzczJ3cXdmYWt3d
 const map = new mapboxgl.Map({
   container: 'map', // container id
   style: 'mapbox://styles/sbf62/cln1wpqwx06br01ph23xw9hgq' // replace this with your style URL
+    center: [-73.935242, 40.730610], // The convention for coordinates is  typically [long, lat]
+  zoom: 12 // The zoom level can be any decimal number
+});
 map.on('load',function(){
   // Give your layer's source a nickname you'll remember easily. I've called my source `sandy_layer`.
   map.addSource('sandy_layer',{
