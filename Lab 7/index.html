@@ -54,9 +54,9 @@
     zoom: 12,
     minZoom: 12
   });
-  map.on('load',function(){
+  map.on('load', function () {
      // Give your layer's source a nickname you'll remember easily. I've called my source `sandy_layer`.
-    map.addSource('sandy_layer',{
+    map.addSource('sandy_layer', {
       'type':'vector',
       'url': 'mapbox://sbf62.6akhl13a'
     });
@@ -65,7 +65,7 @@
       'id':'flood_zones',
       'type':'fill',
       'source':'sandy_layer',
-      'source':'Sandy_Inundation_Zone-am72zn',
+      'source-layer':'Sandy_Inundation_Zone-am72zn',
       'paint':{
         'fill-color':'#00158f',
         'fill-opacity': 0.5
