@@ -60,6 +60,10 @@
       'type':'vector',
       'url': 'mapbox://sbf62.6akhl13a'
     });
+    map.addSource('NYCHA', {
+      'type':' vector',
+      'url': 'mapbox://sbf62.7sifzz3i'
+    });
     // add a new layer with your polygons
     map.addLayer({
       'id':'flood_zones',
@@ -69,6 +73,16 @@
       'paint':{
         'fill-color':'#00158f',
         'fill-opacity': 0.5
+      }
+    })
+    map.addLayer({
+      'id': 'NYCHA_area',
+      'type': 'fill',
+      'source': 'NYCHA',
+      'source-layer': 'Map_of_NYCHA_Developments-3nek2i',
+      'paint': {
+        'fill-color': '#c7aa04',
+        'fill-opacity': .7
       }
     })
   });
