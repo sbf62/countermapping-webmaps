@@ -60,7 +60,7 @@
       'type':'vector',
       'url': 'mapbox://sbf62.6akhl13a'
     });
-    map.addSource('NYCHA', {
+    map.addSource('NYCHA_layer', {
       'type': ' vector',
       'url': 'mapbox://sbf62.7sifzz3i'
     });
@@ -78,7 +78,7 @@
     map.addLayer({
       'id': 'NYCHA_area',
       'type': 'fill',
-      'source': 'NYCHA',
+      'source': 'NYCHA_layer',
       'source-layer': 'Map_of_NYCHA_Developments-3nek2i',
       'paint': {
         'fill-color': '#c7aa04',
