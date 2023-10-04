@@ -61,7 +61,7 @@
       'url': 'mapbox://iamwfx.bpjzmy2b'
     });
 
-    map.addSource('nychaLayer',{
+    map.addSource('nychalayer',{
       'type':'vector',
       'url': 'mapbox://iamwfx.28ut4nij'
     });
@@ -71,7 +71,7 @@
     map.addLayer({
       'id':'nychaBuildings',
       'type':'fill',
-      'source':'nychaLayer',
+      'source':'nychalayer',
       'source-layer':'Map_of_NYCHA_Developments-7i6vok',
       'paint':{
         'fill-color':'red',
