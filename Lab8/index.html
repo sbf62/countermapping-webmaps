@@ -72,7 +72,16 @@
     });
 
     // add a new layer with your polygons
-
+    map.addLayer({
+      'id':'povertyLevel',
+      'type':'fill',
+      'source':'censusLayer',
+      'source-layer':'nyc_blck_grp_2020_wcensus_dro-4db43i',
+      'paint':{
+        'fill-color':'green',
+        'fill-opacity': 0.5
+      }
+    })
     map.addLayer({
       'id':'nychaBuildings',
       'type':'fill',
@@ -90,16 +99,6 @@
       'source-layer':'Sandy_Inundation_Zone-4qcajo',
       'paint':{
         'fill-color':'#00158f',
-        'fill-opacity': 0.5
-      }
-    })
-    map.addLayer({
-      'id':'povertyLevel',
-      'type':'fill',
-      'source':'censusLayer',
-      'source-layer':'nyc_blck_grp_2020_wcensus_dro-4db43i',
-      'paint':{
-        'fill-color':'green',
         'fill-opacity': 0.5
       }
     })
