@@ -84,6 +84,16 @@
       }
     })
     map.addLayer({
+      'id':'floodZones',
+      'type':'fill',
+      'source':'sandyLayer',
+      'source-layer':'Sandy_Inundation_Zone-4qcajo',
+      'paint':{
+        'fill-color':'#00158f',
+        'fill-opacity': 0.5
+      }
+    })
+    map.addLayer({
       'id':'povertyLevel',
       'type':'fill',
       'source':'censusLayer',
@@ -93,16 +103,6 @@
         'fill-opacity': 0.5
       }
     })
-    map.addLayer({
-      'id':'floodZones',
-      'type':'fill',
-      'source':'sandyLayer',
-      'source-layer':'Sandy_Inundation_Zone-4qcajo',
-      'paint':{
-        'fill-color':'#00158f',
-        'fill-opacity': 0.5
-      }
-    });
   });
   // Within a script, you comment using two backslashes.
   </script>
