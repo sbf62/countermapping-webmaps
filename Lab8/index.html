@@ -87,6 +87,36 @@
     'url': 'mapbox://iamwfx.6nowkujs'
     });
 
+    map.addSource('20201in100Layer',{
+    'type':'vector',
+    'url': 'mapbox://iamwfx.bbchggzx'
+    });
+
+    map.addSource('20201in500Layer',{
+    'type':'vector',
+    'url': 'mapbox://iamwfx.05ogder8'
+    });
+
+    map.addSource('20501in100Layer',{
+    'type':'vector',
+    'url': 'mapbox://iamwfx.crrx4301'
+    });
+
+    map.addSource('20501in500Layer',{
+    'type':'vector',
+    'url': 'mapbox://iamwfx.4ydk0450'
+    });
+
+    map.addSource('21001in100Layer',{
+    'type':'vector',
+    'url': 'mapbox://iamwfx.dxjuiivg'
+    });
+
+    map.addSource('21001in500Layer',{
+    'type':'vector',
+    'url': 'mapbox://iamwfx.8thgevrt'
+    });
+
     // add a new layer with your polygons
     map.addLayer({
       'id':'povertyLevel',
@@ -95,10 +125,10 @@
       'source-layer':'nyc_blck_grp_2020_wcensus_dro-4db43i',
       'paint':{
         'fill-color':[
-  'step',
-  ['get','AMR5E002'],
-  'transparent',300,'#f5ef42'
-],
+        'step',
+        ['get','AMR5E002'],
+        'transparent',300,'#f5ef42'
+        ],
         'fill-opacity': 0.9
       }
     })
@@ -122,11 +152,89 @@
         'fill-opacity': 0.5
       }
     })
+
+    map.addLayer({
+      'id':'2020predictedfloodplains1in100',
+      'type':'fill',
+      'source':'20201in100Layer',
+      'source-layer':'FutureFloodplains_2020_100yr-du18hr',
+      'paint':{
+        'fill-color':'#00158f',
+        'fill-opacity': 0.4
+      }
+    })
+
+    map.addLayer({
+      'id':'2020predictedfloodplains1in500',
+      'type':'fill',
+      'source':'20201in500Layer',
+      'source-layer':'FutureFloodplains_2020_500yr-0x77x0',
+      'paint':{
+        'fill-color':'#00158f',
+        'fill-opacity': 0.4
+      }
+    })
+
+    map.addLayer({
+      'id':'2050predictedfloodplains1in100',
+      'type':'fill',
+      'source':'20501in100Layer',
+      'source-layer':'FutureFloodplains_2050_100yr-6nepei',
+      'paint':{
+        'fill-color':'#00158f',
+        'fill-opacity': 0.4
+      }
+    })
+
+    map.addLayer({
+      'id':'2050predictedfloodplains1in500',
+      'type':'fill',
+      'source':'20501in500Layer',
+      'source-layer':'FutureFloodplains_2050_500yr-a4444h',
+      'paint':{
+        'fill-color':'#00158f',
+        'fill-opacity': 0.4
+      }
+    })
+
+    map.addLayer({
+      'id':'2100predictedfloodplains1in100',
+      'type':'fill',
+      'source':'21001in100Layer',
+      'source-layer':'FutureFloodplains_2100_100yr-cqwfrw',
+      'paint':{
+        'fill-color':'#00158f',
+        'fill-opacity': 0.4
+      }
+    })
+
+    map.addLayer({
+      'id':'2100predictedfloodplains1in500',
+      'type':'fill',
+      'source':'21001in500Layer',
+      'source-layer':'FutureFloodplains_2100_500yr-27ghpw',
+      'paint':{
+        'fill-color':'#00158f',
+        'fill-opacity': 0.4
+      }
+    })
+
+
     map.setLayoutProperty('floodZones',"visibility", "visible");
     map.setLayoutProperty('povertyLevel',"visibility", "visible");
     map.setLayoutProperty('nychaBuildings',"visibility", "visible");
+    map.setLayoutProperty('2020predictedfloodplains1in100',"visibility", "visible");
+    map.setLayoutProperty('2020predictedfloodplains1in500',"visibility", "visible");
+    map.setLayoutProperty('2050predictedfloodplains1in100',"visibility", "visible");
+    map.setLayoutProperty('2050predictedfloodplains1in500',"visibility", "visible");
+    map.setLayoutProperty('2100predictedfloodplains1in100',"visibility", "visible");
+    map.setLayoutProperty('2100predictedfloodplains1in500',"visibility", "visible");
+
+
     var layerList = document.getElementById("menu");
     var checkboxes = layerList.getElementsByTagName("input");
+
+    
     function switchLayer(layer) {
     var clickedLayersLabel = layer.target.id; // get the label of the layer cluster
     var clickedLayers = eval(clickedLayersLabel); // create the variable from the label using the eval function
@@ -140,7 +248,7 @@
     for (var i = 0; i < checkboxes.length; i++) {
       checkboxes[i].onclick = switchLayer;
     }
-    
+
   });
   // Within a script, you comment using two backslashes.
   </script>
