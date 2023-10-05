@@ -53,6 +53,30 @@
       +300 People Below Poverty Line
       <input id='povertyLevel' type='checkbox' name='viz-toggle' checked='checked'>
   </label>
+  <label class='check-container'>
+      2020 Predicted Floodplains (1 in 100 year flood)
+      <input id='2020predictedfloodplains1in100', type='checkbox' name='viz-toggle' checked='checked'>
+  </label>
+  <label class='check-container'>
+      2020 Predicted Floodplains (1 in 500 year flood)
+      <input id='2020predictedfloodplains1in500', type='checkbox' name='viz-toggle' checked='checked'>
+  </label>
+  <label class='check-container'>
+      2050 Predicted Floodplains (1 in 100 year flood)
+      <input id='2050predictedfloodplains1in100', type='checkbox' name='viz-toggle' checked='checked'>
+  </label>
+  <label class='check-container'>
+      2050 Predicted Floodplains (1 in 500 year flood)
+      <input id='2050predictedfloodplains1in500', type='checkbox' name='viz-toggle' checked='checked'>
+  </label>
+  <label class='check-container'>
+      2100 Predicted Floodplains (1 in 100 year flood)
+      <input id='2100predictedfloodplains1in100', type='checkbox' name='viz-toggle' checked='checked'>
+  </label>
+  <label class='check-container'>
+      2100 Predicted Floodplains (1 in 500 year flood)
+      <input id='2100predictedfloodplains1in500', type='checkbox' name='viz-toggle' checked='checked'>
+  </label>
 </div>
 
   </div>
@@ -234,7 +258,7 @@
     var layerList = document.getElementById("menu");
     var checkboxes = layerList.getElementsByTagName("input");
 
-    
+
     function switchLayer(layer) {
     var clickedLayersLabel = layer.target.id; // get the label of the layer cluster
     var clickedLayers = eval(clickedLayersLabel); // create the variable from the label using the eval function
@@ -244,7 +268,7 @@
     } else {
       map.setLayoutProperty(clickedLayersLabel, "visibility", "visible")
     }
-    }
+  }
     for (var i = 0; i < checkboxes.length; i++) {
       checkboxes[i].onclick = switchLayer;
     }
