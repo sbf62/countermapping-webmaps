@@ -55,27 +55,27 @@
   </label>
   <label class='check-container'>
       2020 Predicted Floodplains (1 in 100 year flood)
-      <input id='2020predictedfloodplains1in100' type='checkbox' name='viz-toggle' checked='checked'>
+      <input id='aa' type='checkbox' name='viz-toggle' checked='checked'>
   </label>
   <label class='check-container'>
       2020 Predicted Floodplains (1 in 500 year flood)
-      <input id='2020predictedfloodplains1in500' type='checkbox' name='viz-toggle' checked='checked'>
+      <input id='bb' type='checkbox' name='viz-toggle' checked='checked'>
   </label>
   <label class='check-container'>
       2050 Predicted Floodplains (1 in 100 year flood)
-      <input id='2050predictedfloodplains1in100' type='checkbox' name='viz-toggle' checked='checked'>
+      <input id='cc' type='checkbox' name='viz-toggle' checked='checked'>
   </label>
   <label class='check-container'>
       2050 Predicted Floodplains (1 in 500 year flood)
-      <input id='2050predictedfloodplains1in500' type='checkbox' name='viz-toggle' checked='checked'>
+      <input id='dd' type='checkbox' name='viz-toggle' checked='checked'>
   </label>
   <label class='check-container'>
       2100 Predicted Floodplains (1 in 100 year flood)
-      <input id='2100predictedfloodplains1in100' type='checkbox' name='viz-toggle' checked='checked'>
+      <input id='ee' type='checkbox' name='viz-toggle' checked='checked'>
   </label>
   <label class='check-container'>
       2100 Predicted Floodplains (1 in 500 year flood)
-      <input id='2100predictedfloodplains1in500' type='checkbox' name='viz-toggle' checked='checked'>
+      <input id='ff' type='checkbox' name='viz-toggle' checked='checked'>
   </label>
 </div>
 
@@ -111,32 +111,32 @@
     'url': 'mapbox://iamwfx.6nowkujs'
     });
 
-    map.addSource('20201in100Layer',{
+    map.addSource('a',{
     'type':'vector',
     'url': 'mapbox://iamwfx.bbchggzx'
     });
 
-    map.addSource('20201in500Layer',{
+    map.addSource('b',{
     'type':'vector',
     'url': 'mapbox://iamwfx.05ogder8'
     });
 
-    map.addSource('20501in100Layer',{
+    map.addSource('c',{
     'type':'vector',
     'url': 'mapbox://iamwfx.crrx4301'
     });
 
-    map.addSource('20501in500Layer',{
+    map.addSource('d',{
     'type':'vector',
     'url': 'mapbox://iamwfx.4ydk0450'
     });
 
-    map.addSource('21001in100Layer',{
+    map.addSource('e',{
     'type':'vector',
     'url': 'mapbox://iamwfx.dxjuiivg'
     });
 
-    map.addSource('21001in500Layer',{
+    map.addSource('f',{
     'type':'vector',
     'url': 'mapbox://iamwfx.8thgevrt'
     });
@@ -178,9 +178,9 @@
     })
 
     map.addLayer({
-      'id':'2020predictedfloodplains1in100',
+      'id':'aa',
       'type':'fill',
-      'source':'20201in100Layer',
+      'source':'a',
       'source-layer':'FutureFloodplains_2020_100yr-du18hr',
       'paint':{
         'fill-color':'#00158f',
@@ -189,9 +189,9 @@
     })
 
     map.addLayer({
-      'id':'2020predictedfloodplains1in500',
+      'id':'bb',
       'type':'fill',
-      'source':'20201in500Layer',
+      'source':'b',
       'source-layer':'FutureFloodplains_2020_500yr-0x77x0',
       'paint':{
         'fill-color':'#00158f',
@@ -200,9 +200,9 @@
     })
 
     map.addLayer({
-      'id':'2050predictedfloodplains1in100',
+      'id':'cc',
       'type':'fill',
-      'source':'20501in100Layer',
+      'source':'c',
       'source-layer':'FutureFloodplains_2050_100yr-6nepei',
       'paint':{
         'fill-color':'#00158f',
@@ -211,9 +211,9 @@
     })
 
     map.addLayer({
-      'id':'2050predictedfloodplains1in500',
+      'id':'dd',
       'type':'fill',
-      'source':'20501in500Layer',
+      'source':'d',
       'source-layer':'FutureFloodplains_2050_500yr-a4444h',
       'paint':{
         'fill-color':'#00158f',
@@ -222,9 +222,9 @@
     })
 
     map.addLayer({
-      'id':'2100predictedfloodplains1in100',
+      'id':'ee',
       'type':'fill',
-      'source':'21001in100Layer',
+      'source':'e',
       'source-layer':'FutureFloodplains_2100_100yr-cqwfrw',
       'paint':{
         'fill-color':'#00158f',
@@ -233,9 +233,9 @@
     })
 
     map.addLayer({
-      'id':'2100predictedfloodplains1in500',
+      'id':'ff',
       'type':'fill',
-      'source':'21001in500Layer',
+      'source':'f',
       'source-layer':'FutureFloodplains_2100_500yr-27ghpw',
       'paint':{
         'fill-color':'#00158f',
@@ -247,12 +247,12 @@
     map.setLayoutProperty('floodZones',"visibility", "visible");
     map.setLayoutProperty('povertyLevel',"visibility", "visible");
     map.setLayoutProperty('nychaBuildings',"visibility", "visible");
-    map.setLayoutProperty('2020predictedfloodplains1in100',"visibility", "visible");
-    map.setLayoutProperty('2020predictedfloodplains1in500',"visibility", "visible");
-    map.setLayoutProperty('2050predictedfloodplains1in100',"visibility", "visible");
-    map.setLayoutProperty('2050predictedfloodplains1in500',"visibility", "visible");
-    map.setLayoutProperty('2100predictedfloodplains1in100',"visibility", "visible");
-    map.setLayoutProperty('2100predictedfloodplains1in500',"visibility", "visible");
+    map.setLayoutProperty('aa',"visibility", "visible");
+    map.setLayoutProperty('bb',"visibility", "visible");
+    map.setLayoutProperty('cc',"visibility", "visible");
+    map.setLayoutProperty('dd',"visibility", "visible");
+    map.setLayoutProperty('ee',"visibility", "visible");
+    map.setLayoutProperty('ff',"visibility", "visible");
 
 
     var layerList = document.getElementById("menu");
