@@ -47,25 +47,25 @@
               <input id='affHousing' type='checkbox' name='viz-toggle' checked='checked'>
           </label>
           <label class='check-container'>Co-Op
-              <span class="legend-key" style='background:#CCC'></span>
+              <span class="coop" style='background:#F79256'></span>
           </label>
           <label class='check-container'>Shelter
-              <span class="legend-key" style='background:#CCC'></span>
+              <span class="homeless" style='background:#FBD1A2'></span>
           </label>
           <label class='check-container'>HPD subsized
-              <span class="legend-key" style='background:#CCC'></span>
+              <span class="hpd_sub" style='background:#7DCFB6'></span>
           </label>
           <label class='check-container'>Mobile Home
-              <span class="legend-key" style='background:#CCC'></span>
+              <span class="mob_home" style='background:#00B2CA'></span>
           </label>
           <label class='check-container'>Public Housing
-              <span class="legend-key" style='background:#CCC'></span>
+              <span class="pub_hou" style='background:#357DD4'></span>
           </label>
           <label class='check-container'>Single-Residency Housing
-              <span class="legend-key" style='background:#CCC'></span>
+              <span class="sro" style='background:#1D4E89'></span>
           </label>
           <label class='check-container'>Other
-              <span class="legend-key" style='background:#CCC'></span>
+              <span class="other" style='background:##0E2643'></span>
           </label>
 
       <br>
@@ -175,7 +175,10 @@
         'type':'vector',
         'url': 'mapbox://iamwfx.8thgevrt'
       });
-
+      map.addSource('AffordableHousing',{
+        'type':'vector',
+        'url': 'mapbox://iamwfx.ab4g098q'
+      });
 
       map.addLayer({
         'id':'povertyLevel',
@@ -195,17 +198,17 @@
           }
         });
 
-      //
-      // map.addLayer({
-      //   'id':'nychaBuildings',
-      //   'type':'fill',
-      //   'source':'nychaLayer',
-      //   'source-layer':'Map_of_NYCHA_Developments-7i6vok',
-      //   'paint':{
-      //     'fill-color':'red',
-      //     'fill-opacity': 0.5
-      //   }
-      // });
+      
+       map.addLayer({
+        'id':'nychaBuildings',
+         'type':'fill',
+         'source':'nychaLayer',
+         'source-layer':'Map_of_NYCHA_Developments-7i6vok',
+         'paint':{
+           'fill-color':'red',
+           'fill-opacity': 0.5
+         }
+       });
 
 
       map.addLayer({
@@ -279,12 +282,41 @@
           'fill-opacity': 0.3
         }
       });
+      map.addLayer({
+        'id':'affHousing',
+        'type':'line',
+        'source':'AffordableHousing',
+        'source-layer':'PLUTO_HOUS_TYPE_MASTER_Featu-7b5u7f',
+        'paint':{
+
+          'line-opacity': 0.3,
+          'line-width': 2
+          }
+          'line-color':
+          ["match",
+            ['get', 'hous_type'],
+            'coop',
+            '#F79256',
+            'homeless',
+            '#FBD1A2',
+            'hpd_sub',
+            '#7DCFB6',
+            'mob_home',
+            '#00B2CA',
+            'pub_hou',
+            '#357DD4',
+            'sro',
+            '#1D4E89',
+            /*other*/ '#0E2643']
+           
+        }
+      });
 
   // Explicitly set the visibility of each to be on or off.
   // There are probably easier ways to do this../
     map.setLayoutProperty('floodZones',"visibility", "visible");
     map.setLayoutProperty('povertyLevel',"visibility", "visible");
-    // map.setLayoutProperty('nychaBuildings',"visibility", "visible");
+     map.setLayoutProperty('nychaBuildings',"visibility", "visible");
     map.setLayoutProperty('f20_100',"visibility", "visible");
     map.setLayoutProperty('f20_500',"visibility", "visible");
     map.setLayoutProperty('f50_100',"visibility", "visible");
