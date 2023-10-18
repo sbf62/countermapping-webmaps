@@ -1,0 +1,452 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "<!-- This is to indicate we have an HTML document -->\n<!DOCTYPE html>\n\n<!-- All our code goes within this tag-->\n<html>\n\n<!-- All the metadata and packages/tools we'll use go in here-->\n<head>\n\n<!-- The charset attribute specifies the character encoding for the HTML document.-->\n<meta charset='utf-8' />\n\n<!-- The title of your page, which will appear in the browser tab -->\n<title>NYC Housing Flood Risk</title>\n\n<!-- The size of the viewport vs the rendered page -->\n<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />\n\n<!-- We are going to call the Mapbox GL javascript library, which will allow us to use its functionality -->\n<script src='https://api.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.js'></script>\n\n<!-- Alongside this, we are going to bring in the Mapbox GL stylesheet -->\n<link href='https://api.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.css' rel='stylesheet' />\n\n<link href='style.css' rel='stylesheet' />\n\n<!-- This allows us to bring in new fonts -->\n<link href='https://fonts.googleapis.com/css2?family=Montserrat&display=swap' rel='stylesheet'>\n</head>\n\n<!-- The body contains the actual content of a page -->\n<body>\n\n<!-- The 'div' tag delineates a 'division' or section of the HTML page.-->\n  <div id='map'></div>\n\t<div class='map-overlay'>\n  \t<div class='map-overlay-inner'>\n  \t<h2>Public and Affordable Housing Flood Risk</h2>\n    <p>In the fall of 2012, New York City was hit with hurricane that left tens of thousands of public housing residents <a href = 'https://www1.nyc.gov/site/nycha/about/press/pr-2012/nycha-has-restored-power-to-buildings-affected-by-hurricane-sandy.page'>without power for days or even weeks]</a>. New York City Housing Authority public housing developments were affected. <a href='https://furmancenter.org/files/publications/SandysEffectsOnHousingInNYC.pdf'>24,000 government-subsidized apartments and 40,000 rent-stabilized apartments were also affected</a>.</p>\n\n    <p>With rising sea levels from climate change and the <a href='https://www.nytimes.com/2017/04/18/magazine/when-rising-seas-transform-risk-into-certainty.html'>promise</a> of more flooding, which areas and <i>who</i> will likely be most affected? How is affordable housing construction responding to this? </p>\n\n      <div id='menu'>\n          <!-- <h3>Housing Type</h3> -->\n          <label class='check-container'>\n              Affordable Housing Types\n              <input id='affHousing' type='checkbox' name='viz-toggle' checked='checked'>\n          </label>\n          <label class='check-container'>Co-Op\n              <span class=\"legend-key\" style='background:#CCC'></span>\n          </label>\n          <label class='check-container'>Shelter\n              <span class=\"legend-key\" style='background:#CCC'></span>\n          </label>\n          <label class='check-container'>HPD subsized\n              <span class=\"legend-key\" style='background:#CCC'></span>\n          </label>\n          <label class='check-container'>Mobile Home\n              <span class=\"legend-key\" style='background:#CCC'></span>\n          </label>\n          <label class='check-container'>Public Housing\n              <span class=\"legend-key\" style='background:#CCC'></span>\n          </label>\n          <label class='check-container'>Single-Residency Housing\n              <span class=\"legend-key\" style='background:#CCC'></span>\n          </label>\n          <label class='check-container'>Other\n              <span class=\"legend-key\" style='background:#CCC'></span>\n          </label>\n\n      <br>\n          <!-- <h3>Race and Socioeconomic Status</h3> -->\n          <label class='check-container'>\n              +300 People Below Poverty Line\n              <input id='povertyLevel' type='checkbox' name='viz-toggle' checked='checked'>\n          </label>\n          <h3>Flood Risk Zones</h3>\n          <label class='check-container'>\n              2012 Sandy Inundation Zone\n              <input id='floodZones' type='checkbox' name='viz-toggle' checked='checked'>\n          </label>\n          <br>\n          <b>Predicted Floodplains</b>\n          <label class='check-container'>\n              In 2020 (1 in 100 year flood)\n              <input id='f20_100' type='checkbox' name='viz-toggle' checked='checked'>\n          </label>\n          <label class='check-container'>\n              In 2020 (1 in 500 year)\n              <input id='f20_500' type='checkbox' name='viz-toggle' checked='checked'>\n          </label>\n          <label class='check-container'>\n              In 2050 (1 in 100 year)\n              <input id='f50_100' type='checkbox' name='viz-toggle' checked='checked'>\n          </label>\n          <label class='check-container'>\n              In 2050 (1 in 500 year)\n              <input id='f50_500' type='checkbox' name='viz-toggle' checked='checked'>\n          </label>\n          <label class='check-container'>\n              In 2080 (1 in 100 year)\n              <input id='f80_100' type='checkbox' name='viz-toggle' checked='checked'>\n          </label>\n          <label class='check-container'>\n              In 2080 (1 in 500 year)\n              <input id='f80_500' type='checkbox' name='viz-toggle' checked='checked'>\n          </label>\n\n        <!-- <label class='check-container'>\n            NYCHA Buildings\n            <input id='nychaBuildings' type='checkbox' name='viz-toggle' checked='checked'>\n        </label> -->\n\n      </div>\n\n  \t</div>\n\n\n\t</div>\n  <script>\n  // You'll be inserting your JS code to initialize your map here\n  mapboxgl.accessToken = 'YOUR-MAPBOX-TOKEN';\n  const map = new mapboxgl.Map({\n    container: 'map', // container id\n    style: 'mapbox://styles/iamwfx/cl9519asg003414pl56w7ov95', // replace this with your style URL\n    center: [-73.935242, 40.730610], // The convention for coordinates is  typically [long, lat]\n    zoom: 13,\n    // maxZoom: 22,\n    minZoom: 12\n  });\n\n    map.on('load',function(){\n      // Give your layer's source a nickname you'll remember easily.\n      map.addSource('sandyLayer',{\n        'type':'vector',\n        'url': 'mapbox://iamwfx.bpjzmy2b'\n      });\n\n      map.addSource('censusLayer',{\n        'type':'vector',\n        'url': 'mapbox://iamwfx.6nowkujs'\n      });\n\n      map.addSource('nychaLayer',{\n        'type':'vector',\n        'url': 'mapbox://iamwfx.28ut4nij'\n      });\n\n      // Flood plains\n      map.addSource('FutureFloodplains_2020_100yr',{\n        'type':'vector',\n        'url': 'mapbox://iamwfx.bbchggzx'\n      });\n\n      map.addSource('FutureFloodplains_2020_500yr',{\n        'type':'vector',\n        'url': 'mapbox://iamwfx.05ogder8'\n      });\n\n      map.addSource('FutureFloodplains_2050_100yr',{\n        'type':'vector',\n        'url': 'mapbox://iamwfx.crrx4301'\n      });\n\n      map.addSource('FutureFloodplains_2050_500yr',{\n        'type':'vector',\n        'url': 'mapbox://iamwfx.4ydk0450'\n      });\n      map.addSource('FutureFloodplains_2100_100yr',{\n        'type':'vector',\n        'url': 'mapbox://iamwfx.dxjuiivg'\n      });\n\n      map.addSource('FutureFloodplains_2100_500yr',{\n        'type':'vector',\n        'url': 'mapbox://iamwfx.8thgevrt'\n      });\n\n\n      map.addLayer({\n        'id':'povertyLevel',\n        'type':'fill',\n        'source':'censusLayer',\n        'source-layer':'nyc_blck_grp_2020_wcensus_dro-4db43i',\n        'paint':{\n        'fill-color':'#f5ef42',\n          'fill-opacity':\n           [\n          'step',\n            ['get','AMR5E002'],\n            0,300,.8\n            // .3,.9\n\n            ]\n          }\n        });\n\n      //\n      // map.addLayer({\n      //   'id':'nychaBuildings',\n      //   'type':'fill',\n      //   'source':'nychaLayer',\n      //   'source-layer':'Map_of_NYCHA_Developments-7i6vok',\n      //   'paint':{\n      //     'fill-color':'red',\n      //     'fill-opacity': 0.5\n      //   }\n      // });\n\n\n      map.addLayer({\n        'id':'floodZones',\n        'type':'fill',\n        'source':'sandyLayer',\n        'source-layer':'Sandy_Inundation_Zone-4qcajo',\n        'paint':{\n          'fill-color':'#00158f',\n          'fill-opacity': 0.3,\n        }\n      });\n\n      map.addLayer({\n        'id':'f20_100',\n        'type':'fill',\n        'source':'FutureFloodplains_2020_100yr',\n        'source-layer':'FutureFloodplains_2020_100yr-du18hr',\n        'paint':{\n          'fill-color':'#00158f',\n          'fill-opacity': 0.3\n        }\n      });\n      map.addLayer({\n        'id':'f20_500',\n        'type':'fill',\n        'source':'FutureFloodplains_2020_500yr',\n        'source-layer':'FutureFloodplains_2020_500yr-0x77x0',\n        'paint':{\n          'fill-color':'#00158f',\n          'fill-opacity': 0.3\n        }\n      });\n      map.addLayer({\n        'id':'f50_100',\n        'type':'fill',\n        'source':'FutureFloodplains_2050_100yr',\n        'source-layer':'FutureFloodplains_2050_100yr-6nepei',\n        'paint':{\n          'fill-color':'#00158f',\n          'fill-opacity': 0.3\n        }\n      });\n      map.addLayer({\n        'id':'f50_500',\n        'type':'fill',\n        'source':'FutureFloodplains_2050_500yr',\n        'source-layer':'FutureFloodplains_2050_500yr-a4444h',\n        'paint':{\n          'fill-color':'#00158f',\n          'fill-opacity': 0.3\n        }\n      });\n      map.addLayer({\n        'id':'f80_100',\n        'type':'fill',\n        'source':'FutureFloodplains_2100_100yr',\n        'source-layer':'FutureFloodplains_2100_100yr-cqwfrw',\n        'paint':{\n          'fill-color':'#00158f',\n          'fill-opacity': 0.3\n        }\n      });\n      map.addLayer({\n        'id':'f80_500',\n        'type':'fill',\n        'source':'FutureFloodplains_2100_500yr',\n        'source-layer':'FutureFloodplains_2100_500yr-27ghpw',\n        'paint':{\n          'fill-color':'#00158f',\n          'fill-opacity': 0.3\n        }\n      });\n\n  // Explicitly set the visibility of each to be on or off.\n  // There are probably easier ways to do this../\n    map.setLayoutProperty('floodZones',\"visibility\", \"visible\");\n    map.setLayoutProperty('povertyLevel',\"visibility\", \"visible\");\n    // map.setLayoutProperty('nychaBuildings',\"visibility\", \"visible\");\n    map.setLayoutProperty('f20_100',\"visibility\", \"visible\");\n    map.setLayoutProperty('f20_500',\"visibility\", \"visible\");\n    map.setLayoutProperty('f50_100',\"visibility\", \"visible\");\n    map.setLayoutProperty('f50_500',\"visibility\", \"visible\");\n    map.setLayoutProperty('f80_100',\"visibility\", \"visible\");\n    map.setLayoutProperty('f80_500',\"visibility\", \"visible\");\n\n    map.setLayoutProperty('affHousing',\"visibility\", \"visible\");\n\n    var layerList = document.getElementById(\"menu\");\n    var checkboxes = layerList.getElementsByTagName(\"input\");\n\n\n    function switchLayer(layer) {\n      var clickedLayersLabel = layer.target.id; // get the label of the layer cluster\n      var clickedLayers = eval(clickedLayersLabel); // create the variable from the label using the eval function\n\n      var visibility = map.getLayoutProperty(clickedLayersLabel, \"visibility\"); // check whether the cluster of layers is visible by checking the first entry\n      if (visibility === \"visible\") {\n        map.setLayoutProperty(clickedLayersLabel, \"visibility\", \"none\")\n      } else {\n        map.setLayoutProperty(clickedLayersLabel, \"visibility\", \"visible\")\n      }\n    }\n\n    for (var i = 0; i < checkboxes.length; i++) {\n      // layerLabel  = checkboxes[i].id;\n      checkboxes[i].onclick = switchLayer;\n    }\n\n  });\n\n    // Within a script, you comment using two backslashes.\n    </script>\n</body>\n\n</html>",
+			"settings":
+			{
+				"buffer_size": 11465,
+				"line_ending": "Unix",
+				"name": "<!-- This is to indicate we have an HTML document"
+			},
+			"undo_stack":
+			[
+				[
+					1,
+					1,
+					"paste",
+					null,
+					"AQAAAAAAAAAAAAAAySwAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/"
+				]
+			]
+		},
+		{
+			"contents": "body { margin: 0; padding: 0; }\n#map { position: absolute; top: 0; bottom: 0; width: 100%; }\n.map-overlay {\nfont-family: 'Montserrat', sans-serif;\n/*font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;*/\nposition: fixed;\nwidth: 20%;\nborder-radius: 3px;\nbackground-color: #fff;\nba\n/* height: 80%; */\ntop: 0;\nleft: 0;\nmargin: 10px;\n}\n\n.map-overlay-inner {\npadding: 30px;\nmargin-bottom: 10px;\n/* width: 20%;\nheight:100%; */\n}\n\n.map-overlay h2 {\nline-height: 24px;\ndisplay: block;\nmargin: 0 0 10px;\n}\n.mapboxgl-popup {\nmax-width: 400px;\nfont: 12px/20px 'Montserrat Neue',sans-serif;\n}\n\n.check-container {\n  display: flex;\n  flex-flow: row;\n  justify-content: space-between;\n}\n#legend {\n  padding: 10px;\n  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);\n  line-height: 18px;\n  height: 150px;\n  margin-bottom: 40px;\n  width: 100px;\n}\n\n.legend-key {\n  display: inline-block;\n  border-radius: 20%;\n  width: 10px;\n  height: 10px;\n  margin-right: 5px;\n}",
+			"settings":
+			{
+				"buffer_size": 948,
+				"line_ending": "Unix",
+				"name": "body { margin: 0; padding: 0; }"
+			},
+			"undo_stack":
+			[
+				[
+					1,
+					1,
+					"insert",
+					{
+						"characters": "st"
+					},
+					"AgAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAACAAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					2,
+					3,
+					"left_delete",
+					null,
+					"AgAAAAEAAAAAAAAAAQAAAAAAAAABAAAAdAAAAAAAAAAAAAAAAAAAAAABAAAAcw",
+					"AQAAAAAAAAABAAAAAgAAAAAAAAACAAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					3,
+					1,
+					"paste",
+					null,
+					"AQAAAAAAAAAAAAAAtAMAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/"
+				]
+			]
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/stellafrank/Documents/GitHub/countermapping-webmaps/Lab8/index.html",
+		"/Users/stellafrank/Documents/GitHub/countermapping-webmaps/Lab8/style.css",
+		"/Users/stellafrank/Documents/GitHub/countermapping-webmaps/Lab 7/index.html",
+		"/Users/stellafrank/Documents/GitHub/countermapping-webmaps/Lab 7/style.css",
+		"/Users/stellafrank/Documents/GitHub/countermapping-webmaps/index.html"
+	],
+	"find":
+	{
+		"height": 0.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 11465,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								11465,
+								11465
+							]
+						],
+						"settings":
+						{
+							"auto_name": "<!-- This is to indicate we have an HTML document",
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content"
+							],
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"selected": true,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 948,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								948,
+								948
+							]
+						],
+						"settings":
+						{
+							"auto_name": "body { margin: 0; padding: 0; }",
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content"
+							],
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"stack_multiselect": false,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.SublimeLinter":
+	{
+		"height": 0.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.mdpopups":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "Index.sublime-project",
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 216.5,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
