@@ -198,15 +198,15 @@
           }
       });
 
-      map.addLayer({
-        'id':'nychaBuildings',
-         'type':'fill',
-         'source':'nychaLayer',
-         'source-layer':'Map_of_NYCHA_Developments-7i6vok',
-         'paint':{
-           'fill-color':'red',
-           'fill-opacity': 0.5
-         }
+      //map.addLayer({
+      //  'id':'nychaBuildings',
+      //   'type':'fill',
+      //   'source':'nychaLayer',
+      //   'source-layer':'Map_of_NYCHA_Developments-7i6vok',
+      //   'paint':{
+      //     'fill-color':'red',
+      //     'fill-opacity': 0.5
+      //   }
       });
       map.addLayer({
         'id':'floodZones',
@@ -311,16 +311,19 @@
 
   // Explicitly set the visibility of each to be on or off.
   // There are probably easier ways to do this../
-    map.setLayoutProperty('affHousing',"visibility", "visible");
+   // Explicitly set the visibility of each to be on or off.
+  // There are probably easier ways to do this../
     map.setLayoutProperty('floodZones',"visibility", "visible");
     map.setLayoutProperty('povertyLevel',"visibility", "visible");
-     map.setLayoutProperty('nychaBuildings',"visibility", "visible");
+    // map.setLayoutProperty('nychaBuildings',"visibility", "visible");
     map.setLayoutProperty('f20_100',"visibility", "visible");
     map.setLayoutProperty('f20_500',"visibility", "visible");
     map.setLayoutProperty('f50_100',"visibility", "visible");
     map.setLayoutProperty('f50_500',"visibility", "visible");
     map.setLayoutProperty('f80_100',"visibility", "visible");
     map.setLayoutProperty('f80_500',"visibility", "visible");
+
+    map.setLayoutProperty('affHousing',"visibility", "visible");
 
     var layerList = document.getElementById("menu");
     var checkboxes = layerList.getElementsByTagName("input");
