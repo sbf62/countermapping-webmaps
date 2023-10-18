@@ -181,6 +181,35 @@
       });
 
       map.addLayer({
+        'id':'affHousing',
+        'type':'line',
+        'source':'AffordableHousing',
+        'source-layer':'PLUTO_HOUS_TYPE_MASTER_Featu-7b5u7f',
+        'paint':{
+
+          'line-opacity': 0.3,
+          'line-width': 2,
+          'line-color':
+          ['match',
+            ['get', 'hous_type'],
+            'coop',
+            '#F79256',
+            'homeless',
+            '#FBD1A2',
+            'hpd_sub',
+            '#7DCFB6',
+            'mob_home',
+            '#00B2CA',
+            'pub_hou',
+            '#357DD4',
+            'sro',
+            '#1D4E89',
+            /*other*/ '#0E2643']
+          } 
+        })
+      });
+
+      map.addLayer({
         'id':'povertyLevel',
         'type':'fill',
         'source':'censusLayer',
@@ -282,34 +311,7 @@
           'fill-opacity': 0.3
         }
       });
-      map.addLayer({
-        'id':'affHousing',
-        'type':'line',
-        'source':'AffordableHousing',
-        'source-layer':'PLUTO_HOUS_TYPE_MASTER_Featu-7b5u7f',
-        'paint':{
-
-          'line-opacity': 0.3,
-          'line-width': 2,
-          'line-color':
-          ['match',
-            ['get', 'hous_type'],
-            'coop',
-            '#F79256',
-            'homeless',
-            '#FBD1A2',
-            'hpd_sub',
-            '#7DCFB6',
-            'mob_home',
-            '#00B2CA',
-            'pub_hou',
-            '#357DD4',
-            'sro',
-            '#1D4E89',
-            /*other*/ '#0E2643']
-          } 
-        })
-      });
+      
 
   // Explicitly set the visibility of each to be on or off.
   // There are probably easier ways to do this../
@@ -322,7 +324,7 @@
     map.setLayoutProperty('f50_500',"visibility", "visible");
     map.setLayoutProperty('f80_100',"visibility", "visible");
     map.setLayoutProperty('f80_500',"visibility", "visible");
-    
+
     map.setLayoutProperty('affHousing',"visibility", "visible");
 
     var layerList = document.getElementById("menu");
