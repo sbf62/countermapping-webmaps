@@ -207,7 +207,7 @@
             /*other*/ '#0E2643']
           } 
         });
-      
+
       map.addLayer({
         'id':'povertyLevel',
         'type':'fill',
@@ -315,6 +315,7 @@
 
   // Explicitly set the visibility of each to be on or off.
   // There are probably easier ways to do this../
+    map.setLayoutProperty('affHousing',"visibility", "visible");
     map.setLayoutProperty('floodZones',"visibility", "visible");
     map.setLayoutProperty('povertyLevel',"visibility", "visible");
      map.setLayoutProperty('nychaBuildings',"visibility", "visible");
@@ -324,8 +325,6 @@
     map.setLayoutProperty('f50_500',"visibility", "visible");
     map.setLayoutProperty('f80_100',"visibility", "visible");
     map.setLayoutProperty('f80_500',"visibility", "visible");
-
-    map.setLayoutProperty('affHousing',"visibility", "visible");
 
     var layerList = document.getElementById("menu");
     var checkboxes = layerList.getElementsByTagName("input");
