@@ -312,7 +312,8 @@
           closeOnClick: false
           });
         map.on('mouseenter','affHousing',function(e){
-
+        map.getCanvas().style.cursor = 'pointer';
+        
         const coordinates = e.features[0].geometry.coordinates.slice();
           // Here's that function that does the transformation
         function emptyToYesNo(val){
