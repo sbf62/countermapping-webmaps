@@ -310,8 +310,9 @@
         const popup = new mapboxgl.Popup({
           closeButton: false,
           closeOnClick: false
-          });
-        map.on('mouseenter','yourLayerId',function(e){})
+        });
+
+        map.on('mouseenter','affHousing',function(e){
 
         const coordinates = e.features[0].geometry.coordinates.slice();
           // Here's that function that does the transformation
@@ -338,7 +339,7 @@
         map.on('mouseleave', 'affHousing', function() {
         map.getCanvas().style.cursor = '';
         popup.remove();
-        });
+        })
 
         // We apply this function to our value.
   /// THERE ARE THREE MORE VARIABLES MISSING!
