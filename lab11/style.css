@@ -1,3 +1,4 @@
+<style>
 body {
             margin:0;
             padding:0;
@@ -116,3 +117,5 @@ body {
         .mapboxgl-canvas-container.mapboxgl-touch-zoom-rotate.mapboxgl-touch-drag-pan .mapboxgl-canvas {
             touch-action: unset;
         }
+
+        </style>
