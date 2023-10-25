@@ -17,10 +17,10 @@ var config = {
 
         {
             id: 'second-identifier',
-            alignment: 'right',
+            alignment: 'left',
             hidden: false,
             title: 'Background',
-            image: 'images/source.png',
+            image: '',
             description: 'In the fall of 2012, New York City was hit with hurricane that left tens of thousands of public housing residents without power for days or even weeks. New York City Housing Authority public housing developments were affected. 24,000 government-subsidized apartments and 40,000 rent-stabilized apartments were also affected. With rising sea levels from climate change and the promise of more flooding, which areas and who will likely be most affected? How is affordable housing construction responding to this?',
             location: {
                 center: [-73.96295, 40.65619],
@@ -37,7 +37,10 @@ var config = {
             mapAnimation: 'flyTo',
             rotateAnimation: true,
             callback: '',
-            onChapterEnter: [],
+            onChapterEnter: [{
+                    layer: 'pluto-hous-type-master-featu-7b5u7f',
+                    opacity: 0 
+            }],
             onChapterExit: []
         },
         {
@@ -45,38 +48,25 @@ var config = {
             alignment: 'left',
             hidden: false,
             title: 'Red Hook Housing',
-            image: 'images/source.png',
-            description: 'Copy these sections to add to your story.',
+            image: 'https://thebridgebk.com/wp-content/uploads/2017/10/121029_5267-1024x683.jpg',
+            description: 'Red Hook Houses are the largest housing development in all of Brooklyn, New York. During hurricane Sandy, this area became innundated with around 6 ft of water from sewer overflows and high tides. This left many damages including leaks and mold in the housing development. Residents were also left without acess to energy or freash water for months.',
             location: {
-                center: [-73.96295, 40.65619],
-                zoom: 12.52,
-                pitch: 8.01,
-                bearing: 0.00
+                center: [-74.00778, 40.67630],
+                zoom: 15.7,
+                pitch: 50,
+                bearing: -43.2
             },
             mapAnimation: 'flyTo',
             rotateAnimation: false,
             callback: '',
-            onChapterEnter: [],
+            onChapterEnter: [
+                {
+                    layer: 'pluto-hous-type-master-featu-7b5u7f',
+                    opacity: 1
+            }
+            ],
             onChapterExit: []
         },
-        {
-            id: 'fourth-chapter',
-            alignment: 'fully',
-            hidden: false,
-            title: 'Third Title',
-            image: 'images/source.png',
-            description: 'Copy these sections to add to your story.',
-            location: {
-                center: [-73.96295, 40.65619],
-                zoom: 4,
-                pitch: 0,
-                bearing: 0
-            },
-            mapAnimation: 'flyTo',
-            rotateAnimation: false,
-            callback: '',
-            onChapterEnter: [],
-            onChapterExit: []
-        }
+ 
     ]
 };
