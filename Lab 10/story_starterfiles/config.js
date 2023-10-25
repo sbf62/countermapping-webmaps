@@ -52,12 +52,12 @@ var config = {
             description: 'Red Hook Houses are the largest housing development in all of Brooklyn, New York. During hurricane Sandy, this area became innundated with around 6 ft of water from sewer overflows and high tides. This left many damages including leaks and mold in the housing development. Residents were also left without acess to energy or freash water for months.',
             location: {
                 center: [-74.00778, 40.67630],
-                zoom: 15.7,
+                zoom: 15.5,
                 pitch: 50,
                 bearing: -43.2
             },
             mapAnimation: 'flyTo',
-            rotateAnimation: false,
+            rotateAnimation: true,
             callback: '',
             onChapterEnter: [
                 {
