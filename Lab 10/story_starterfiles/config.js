@@ -7,10 +7,14 @@ var config = {
     //Read more about available projections here
     //https://docs.mapbox.com/mapbox-gl-js/example/projections/
     inset: true,
-    theme: 'dark',
-    use3dTerrain: false, //set true for enabling 3D maps.
-    title: 'The Title Text of this Story',
-    subtitle: 'A descriptive and interesting subtitle to draw in the reader',
+    theme: 'light',
+    use3dTerrain: true, //set true for enabling 3D maps.
+    title: 'Public and Affordable Housing Flood Risk',
+    subtitle: 'In the fall of 2012, New York City was hit with hurricane 
+    that left tens of thousands of public housing residents 
+    <a href = 'https://www1.nyc.gov/site/nycha/about/press/pr-2012/nycha-has-restored-power-to-buildings-affected-by-hurricane-sandy.page'>
+    without power for days or even weeks]</a>. New York City Housing Authority public housing developments were affected. <a href='https://furmancenter.org/files/publications/SandysEffectsOnHousingInNYC.pdf'>24,000 government-subsidized apartments and 40,000 rent-stabilized apartments were also affected</a>.</p>
+    With rising sea levels from climate change and the <a href='https://www.nytimes.com/2017/04/18/magazine/when-rising-seas-transform-risk-into-certainty.html'>promise</a> of more flooding, which areas and <i>who</i> will likely be most affected? How is affordable housing construction responding to this?',
     byline: 'By a Digital Storyteller',
     footer: 'Source: source citations, etc. <br> Created using <a href="https://github.com/mapbox/storytelling" target="_blank">Mapbox Storytelling</a> template.',
     chapters: [
