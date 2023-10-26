@@ -2,7 +2,7 @@
 body {
             margin:0;
             padding:0;
-            font-family: sans-serif;
+            font-family: 'Sometype Mono', monospace;
         }
         a, a:hover, a:visited {
             color: #0071bc;
@@ -38,11 +38,23 @@ body {
             width: 100%;
             position: relative;
             z-index: 5;
+          	background-image: url("images/sandy1.png");
+
+  			background-position: top;
+  			background-repeat: no-repeat;
+  			background-size: cover;
+  			height: 100vh
         }
         #header h1, #header h2, #header p {
+
             margin: 0;
             padding: 2vh 2vw;
             text-align: center;
+        }
+        #header h1{
+        	font-size: 7vh;
+        	color: white;
+        	padding-top:30vh;
         }
         #footer {
             width: 100%;
