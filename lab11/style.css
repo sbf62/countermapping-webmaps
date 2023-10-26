@@ -1,7 +1,7 @@
-<style>
 body {
             margin:0;
             padding:0;
+            ##FONTHERE
             font-family: 'Sometype Mono', monospace;
         }
         a, a:hover, a:visited {
@@ -42,8 +42,9 @@ body {
 
   			background-position: top;
   			background-repeat: no-repeat;
-  			background-size: cover;
-  			height: 100vh
+  			background-size: 100vw 100vh;
+  			height:170vh;
+  			background-color:white;
         }
         #header h1, #header h2, #header p {
 
@@ -54,7 +55,18 @@ body {
         #header h1{
         	font-size: 7vh;
         	color: white;
-        	padding-top:30vh;
+        	padding-top:30vh; 
+        }
+        #header h2{
+        	padding-bottom:60vh;
+        	color: white;
+        }
+        #header p {
+        	font-size: 1.2vh;
+    		text-align: justify;
+    		margin-left: 34vw;
+    		margin-right: 34vw;
+        	color:black;
         }
         #footer {
             width: 100%;
@@ -67,6 +79,7 @@ body {
             position: relative;
             z-index: 5;
         }
+
         #features {
             padding-top: 10vh;
             padding-bottom: 10vh;
@@ -130,4 +143,15 @@ body {
             touch-action: unset;
         }
 
-        </style>
+        #interlude {
+    		width: 100vw;
+		}
+		#interlude p{
+   			font-size: 1.2vh;
+    		text-align: justify;
+    		margin-left: 34vw;
+    		margin-right: 34vw;
+    		background-color: : white;
+		}
+
+
