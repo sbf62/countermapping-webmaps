@@ -7,7 +7,7 @@ var config = {
     //Read more about available projections here
     //https://docs.mapbox.com/mapbox-gl-js/example/projections/
     inset: false,
-    theme: 'dark',
+    theme: 'light',
     use3dTerrain: false, //set true for enabling 3D maps.
     title: 'Coastal Flooding in New York City',
     subtitle: 'Accessing Risks to Vulnerable Housing',
@@ -26,7 +26,7 @@ var config = {
             image: 'images/source.png',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             location: {
-                center: [-122.418398, 37.759483],
+                center: [-73.97615, 40.71901],
                 zoom: 8.5,
                 pitch: 60,
                 bearing: 0
@@ -56,7 +56,7 @@ var config = {
             image: 'images/source.png',
             description: 'Copy these sections to add to your story.',
             location: {
-                center: [-77.020636, 38.886900],
+                center: [-73.97615, 40.71901],
                 zoom: 8.5,
                 pitch: 60,
                 bearing: -43.2,
@@ -73,6 +73,19 @@ var config = {
             onChapterEnter: [],
             onChapterExit: []
         },
+
+        {
+    id: 'interlude',
+    alignment: 'center',
+    hidden: false,
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ultricies tempor purus, eget tempus sem bibendum vel. Maecenas at justo non felis accumsan condimentum vitae et leo. Sed sodales nec risus maximus congue. Ut quis tincidunt leo. Pellentesque sapien nisl, congue tempus mauris in, pulvinar mattis turpis. Nullam sit amet justo egestas, laoreet mauris ut, pulvinar ipsum. Pellentesque vehicula imperdiet iaculis. Nam in tellus metus. Donec a est non orci efficitur ornare id mattis eros. Aliquam vel facilisis ligula. Nullam tincidunt, sapien vitae bibendum consequat, nibh eros eleifend ligula, et aliquam enim justo eget felis. Sed nec vehicula metus. Pellentesque rutrum dui quis egestas hendrerit. Nullam auctor et tortor sit amet congue.',
+    location: {
+      center: [-73.97615, 40.71901],
+      zoom: 14.84,
+      pitch: 48,
+      bearing: 142.44,
+    }
+	},
         {
             id: 'third-chapter',
             alignment: 'left',
