@@ -1,9 +1,10 @@
-body {
+		
+		body {
             margin:0;
             padding:0;
-            ##FONTHERE
-            font-family: 'Sometype Mono', monospace;
+           font-family: 'Sometype Mono', monospace;
         }
+
         a, a:hover, a:visited {
             color: #0071bc;
         }
@@ -68,6 +69,21 @@ body {
     		margin-right: 34vw;
         	color:black;
         }
+
+        #interlude {
+    	width: 100vw;
+		}
+
+		#interlude p{
+    	font-size: 1.2vh;
+    	text-align: justify;
+    	margin-left: 34vw;
+    	margin-right: 34vw;
+    	background-color: white;
+		}
+
+
+
         #footer {
             width: 100%;
             min-height: 5vh;
@@ -141,17 +157,11 @@ body {
         .mapboxgl-canvas-container.mapboxgl-touch-zoom-rotate.mapboxgl-touch-drag-pan,
         .mapboxgl-canvas-container.mapboxgl-touch-zoom-rotate.mapboxgl-touch-drag-pan .mapboxgl-canvas {
             touch-action: unset;
-        }
+       }
 
-        #interlude {
-    		width: 100vw;
-		}
-		#interlude p{
-   			font-size: 1.2vh;
-    		text-align: justify;
-    		margin-left: 34vw;
-    		margin-right: 34vw;
-    		background-color: : white;
-		}
+
+
+
+
 
 
