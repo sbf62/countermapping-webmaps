@@ -16,6 +16,7 @@ var config = {
     para1:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse pulvinar lacus nec risus tempus, in pulvinar quam suscipit. Aliquam ultrices blandit quam, ac convallis ligula egestas eu. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin et enim vitae ex pellentesque porttitor. Duis eu diam sed purus varius auctor. Morbi nec consequat mi, et pulvinar tortor. Curabitur auctor iaculis magna eu volutpat. Cras tristique odio ligula, vitae rutrum nibh porta quis. Sed porttitor non augue non fringilla. Donec ac enim vel metus dapibus cursus.',
 	para2:'Proin consequat aliquam turpis, at tincidunt dolor mattis eu. Curabitur vestibulum sed tellus a molestie. Nam cursus a turpis eget varius. Ut imperdiet dui nec dignissim cursus. Aliquam a sem sit amet velit ornare tristique. Morbi eu dui at mauris dapibus dignissim. Nam ultrices porta neque, ac tincidunt sem suscipit iaculis. Maecenas fermentum gravida justo vel volutpat. Donec iaculis sapien odio, ut tincidunt est rhoncus quis. In a purus massa. Sed varius ipsum et purus convallis, eget molestie ligula tristique. Morbi non nisi vel sapien ultricies ultrices. Cras sed est aliquet, tempus orci eget, condimentum mi. Nullam magna sem, interdum in nunc vel, elementum commodo tortor. Phasellus velit ipsum, tincidunt eu rutrum vel, scelerisque ac nulla. Nunc sodales elit et velit varius, at porta lorem aliquet.',
 
+    
     footer: 'Source: source citations, etc. <br> Created using <a href="https://github.com/mapbox/storytelling" target="_blank">Mapbox Storytelling</a> template.',
     chapters: [
         {
@@ -79,6 +80,7 @@ var config = {
     alignment: 'center',
     hidden: false,
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ultricies tempor purus, eget tempus sem bibendum vel. Maecenas at justo non felis accumsan condimentum vitae et leo. Sed sodales nec risus maximus congue. Ut quis tincidunt leo. Pellentesque sapien nisl, congue tempus mauris in, pulvinar mattis turpis. Nullam sit amet justo egestas, laoreet mauris ut, pulvinar ipsum. Pellentesque vehicula imperdiet iaculis. Nam in tellus metus. Donec a est non orci efficitur ornare id mattis eros. Aliquam vel facilisis ligula. Nullam tincidunt, sapien vitae bibendum consequat, nibh eros eleifend ligula, et aliquam enim justo eget felis. Sed nec vehicula metus. Pellentesque rutrum dui quis egestas hendrerit. Nullam auctor et tortor sit amet congue.',
+    video: 'images/902-1_902-2364-PD2_preview.mp4',
     location: {
       center: [-73.97615, 40.71901],
       zoom: 14.84,
