@@ -98,7 +98,17 @@ config.chapters.forEach((record, idx) => {
         story.innerHTML = record.description;
         chapter.appendChild(story);
     }
-
+if (record.video) {
+    var videoDiv = document.createElement('div');
+    videoDiv.setAttribute('class', 'videoContainer');
+    video =  document.createElement('video');
+    video.controls=true;
+    video.autoplay=true;
+    video.loop=true;
+    video.src = record.video;
+    videoDiv.appendChild(video)
+    chapter.appendChild(videoDiv);
+}
     container.setAttribute('id', record.id);
     container.classList.add('step');
     if (idx === 0) {
