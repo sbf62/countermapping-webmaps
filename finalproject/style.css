@@ -4,19 +4,52 @@ body, html {
     height: 100%;
 }
 
-.container {
+.full-width-section {
+    width: 100%;
+    height: 30vh; /* Adjust the height as needed */
     display: flex;
-    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0; /* Set the background color as needed */
 }
 
-#map {
+.full-width-section .text-content {
+    max-width: 800px; /* Adjust the max-width as needed */
+    text-align: center;
+    padding: 20px;
+}
+
+.section {
+    display: flex;
+}
+
+.content {
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.map {
     width: 50%;
     height: 100%;
 }
 
-.story {
+.text-content {
     width: 50%;
     padding: 20px;
     box-sizing: border-box;
     overflow: auto;
+    text-align: center; /* Adjust as needed */
 }
+
+.right-column {
+    order: 1;
+}
+
+.left-column {
+    order: 2;
+}
+
+/* Add additional styles as needed */
+
