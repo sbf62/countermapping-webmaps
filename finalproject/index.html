@@ -1,65 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.js"></script>
-    <link
-        href="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.css"
-        rel="stylesheet"
-    />
-    <title>Your Split-Screen Map</title>
+    <meta charset='utf-8' />
+    <title>Mapbox Storytelling</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/mapbox/assembly/publisher-staging/src/svgs/mapbox.svg">
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css' rel='stylesheet' />
+    <script src="https://unpkg.com/intersection-observer@0.12.0/intersection-observer.js"></script>
+    <script src="https://unpkg.com/scrollama"></script>
+    <link href='style.css' rel='stylesheet' />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sometype+Mono&display=swap" rel="stylesheet">
+
 </head>
 <body>
 
-    <!-- Full-width text section -->
-    <div class="full-width-section">
-        <div class="text-content">
-            <h2>Comparing Housing Crises Across the World: NYC and Amsterdam</h2>
-            <p>ADD TEXT.</p>
-        </div>
-    </div>
+<div id="map"></div>
+<div id="mapInset"></div>
+<div id="story"></div>
 
-    <!-- Split-screen layout -->
-    <div class="section">
-        <div class="content right-column">
-            <div class="map" id="map1"></div>
-            <div class="text-content">
-                <h2>Housing Crisis in NYC</h2>
-                <p>Your text for Map 1...</p>
-            </div>
-        </div>
-        <div class="content right-column">
-            <div class="map" id="map2"></div>
-            <div class="text-content">
-                <h2>Housing Crisis in Amsterdam</h2>
-                <p>Your text for Map 2...</p>
-            </div>
-        </div>
-        <!-- Repeat the pattern as needed -->
-    </div>
+<script src="./config.js"></script>
+<script src="./script.js"></script>
 
-    <div class="section">
-        <div class="content left-column">
-            <div class="map" id="map3"></div>
-            <div class="text-content">
-                <h2>Map 3 Title</h2>
-                <p>Your text for Map 3...</p>
-            </div>
-        </div>
-        <div class="content left-column">
-            <div class="map" id="map4"></div>
-            <div class="text-content">
-                <h2>Map 4 Title</h2>
-                <p>Your text for Map 4...</p>
-            </div>
-        </div>
-        <!-- Repeat the pattern as needed -->
-    </div>
-
-    <script src="script.js"></script>
 </body>
 </html>
+
 
 
