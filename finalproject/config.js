@@ -1,5 +1,5 @@
 var config = {
-    style:  'mapbox://styles/iamwfx/cjjx6bl926vgt2ss0l9dbpmxz',
+    style:  'mapbox://styles/sbf62/clozx8hk700t701qn92q86i3u',
     accessToken: 'pk.eyJ1Ijoic2JmNjIiLCJhIjoiY2xuMXZhaTZkMDIzczJ3cXdmYWt3dTE2NiJ9.0Bwf-GgUm2QzNybs9scQ6Q',
     showMarkers: true,
     markerColor: '#3FB1CE',
@@ -9,9 +9,9 @@ var config = {
     inset: false,
     theme: 'light',
     use3dTerrain: false, //set true for enabling 3D maps.
-    title: 'Coastal Flooding in New York City',
-    subtitle: 'Accessing Risks to Vulnerable Housing',
-    byline: 'By a Digital Storyteller',
+    title: 'Housing Crises Across the World',
+    subtitle: 'New York City v Amsterdam',
+    byline: 'By Stella Frank',
 
     para1:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse pulvinar lacus nec risus tempus, in pulvinar quam suscipit. Aliquam ultrices blandit quam, ac convallis ligula egestas eu. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin et enim vitae ex pellentesque porttitor. Duis eu diam sed purus varius auctor. Morbi nec consequat mi, et pulvinar tortor. Curabitur auctor iaculis magna eu volutpat. Cras tristique odio ligula, vitae rutrum nibh porta quis. Sed porttitor non augue non fringilla. Donec ac enim vel metus dapibus cursus.',
 	para2:'Proin consequat aliquam turpis, at tincidunt dolor mattis eu. Curabitur vestibulum sed tellus a molestie. Nam cursus a turpis eget varius. Ut imperdiet dui nec dignissim cursus. Aliquam a sem sit amet velit ornare tristique. Morbi eu dui at mauris dapibus dignissim. Nam ultrices porta neque, ac tincidunt sem suscipit iaculis. Maecenas fermentum gravida justo vel volutpat. Donec iaculis sapien odio, ut tincidunt est rhoncus quis. In a purus massa. Sed varius ipsum et purus convallis, eget molestie ligula tristique. Morbi non nisi vel sapien ultricies ultrices. Cras sed est aliquet, tempus orci eget, condimentum mi. Nullam magna sem, interdum in nunc vel, elementum commodo tortor. Phasellus velit ipsum, tincidunt eu rutrum vel, scelerisque ac nulla. Nunc sodales elit et velit varius, at porta lorem aliquet.',
@@ -20,10 +20,11 @@ var config = {
     footer: 'Source: source citations, etc. <br> Created using <a href="https://github.com/mapbox/storytelling" target="_blank">Mapbox Storytelling</a> template.',
     chapters: [
         {
-            id: 'first-chapter',
-            alignment: 'left',
+            id: 'chapter1',
+            alignment: 'right',
             hidden: false,
-            title: 'Display Title',
+            index: 0,
+            title: 'The Housing Crisis in NYC',
             image: 'images/source.png',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             location: {
@@ -33,7 +34,7 @@ var config = {
                 bearing: 0
             },
             mapAnimation: 'flyTo',
-            rotateAnimation: false,
+            rotateAnimation: true,
             callback: '',
             onChapterEnter: [
                 // {
@@ -50,10 +51,11 @@ var config = {
             ]
         },
         {
-            id: 'second-chapter',
-            alignment: 'right',
+            id: 'chapter2',
+            alignment: 'left',
             hidden: false,
-            title: 'Second Title',
+            index: 1,
+            title: 'The Housing Crisis in Amsterdam',
             image: 'images/source.png',
             description: 'Copy these sections to add to your story.',
             location: {
@@ -75,6 +77,7 @@ var config = {
             onChapterExit: []
         },
 
+
         {
     id: 'interlude',
     alignment: 'center',
@@ -88,10 +91,13 @@ var config = {
       bearing: 142.44,
     }
 	},
-        {
-            id: 'third-chapter',
+
+
+    {
+    id: 'chapter3',
             alignment: 'left',
             hidden: false,
+            index: 2,
             title: 'Third Title',
             image: './path/to/image/source.png',
             description: 'Copy these sections to add to your story.',
@@ -104,7 +110,7 @@ var config = {
               curve: 1, // change the speed at which it zooms out
             },
             mapAnimation: 'flyTo',
-            rotateAnimation: false,
+            rotateAnimation: true,
             callback: '',
             onChapterEnter: [
                 {
@@ -113,7 +119,72 @@ var config = {
                     duration: 10
                 }],
             onChapterExit: []
-        }
+    },
+
+            {
+            id: 'chapter4',
+            alignment: 'right',
+            hidden: false,
+            index: 3,
+            title: 'The Housing Crisis in Amsterdam',
+            image: 'images/source.png',
+            description: 'Copy these sections to add to your story.',
+            location: {
+                center: [-73.97615, 40.71901],
+                zoom: 8.5,
+                pitch: 60,
+                bearing: -43.2,
+
+            },
+            mapAnimation: 'flyTo',
+            rotateAnimation: true,
+            callback: '',
+            onChapterEnter: [],
+            onChapterExit: []
+        },
+            {
+            id: 'chapter5',
+            alignment: 'left',
+            hidden: false,
+            index: 4,
+            title: 'The Housing Crisis in Amsterdam',
+            image: 'images/source.png',
+            description: 'Copy these sections to add to your story.',
+            location: {
+                center: [-73.97615, 40.71901],
+                zoom: 8.5,
+                pitch: 60,
+                bearing: -43.2,
+  
+            },
+            mapAnimation: 'flyTo',
+            rotateAnimation: true,
+            callback: '',
+            onChapterEnter: [],
+            onChapterExit: []
+        },
+            {
+            id: 'chapter6',
+            alignment: 'right',
+            hidden: false,
+            index: 5,
+            title: 'The Housing Crisis in Amsterdam',
+            image: 'images/source.png',
+            description: 'Copy these sections to add to your story.',
+            location: {
+                center: [-73.97615, 40.71901],
+                zoom: 8.5,
+                pitch: 60,
+                bearing: -43.2,
+
+            },
+            mapAnimation: 'flyTo',
+            rotateAnimation: true,
+            callback: '',
+            onChapterEnter: [],
+            onChapterExit: []
+        },
+
     ]
 };
 
