@@ -135,6 +135,19 @@ config.chapters.forEach((record, idx) => {
     });
 }
 
+    if (record.id === 'interlude2') {
+        var leftTextDiv = document.createElement('div');
+        leftTextDiv.innerHTML = record.leftText;
+        leftTextDiv.classList.add('left-text');
+
+        var rightTextDiv = document.createElement('div');
+        rightTextDiv.innerHTML = record.rightText;
+        rightTextDiv.classList.add('right-text');
+
+        chapter.appendChild(leftTextDiv);
+        chapter.appendChild(rightTextDiv);
+    }
+
     if (record.image) {
         var image = new Image();
         image.src = record.image;
@@ -270,64 +283,69 @@ scroller
         offset: 0.5,
         progress: true
     })
-    .onStepEnter(response => {
-        var chapter = config.chapters.find(chap => chap.id === response.element.id);
-        response.element.classList.add('active');
-        map[chapter.mapAnimation || 'flyTo'](chapter.location);
+.onStepEnter(response => {
+    var chapter = config.chapters.find(chap => chap.id === response.element.id);
+    if (!chapter) {
+        console.error('Chapter not found:', response.element.id);
+        return;
+    }
 
-        // Check if the chapter index is for 'map' rotation
-        if ([1, 3, 5].includes(chapter.index)) {
-            console.log('Rotating map during chapter:', chapter.index);
-            map.once('moveend', () => {
-                const rotateNumber = map.getBearing();
-                map.rotateTo(rotateNumber + 180, {
-                    duration: 30000,
-                    easing: function (t) {
-                        return t;
-                    }
-                });
+    response.element.classList.add('active');
+    map[chapter.mapAnimation || 'flyTo'](chapter.location);
+
+    if ([1, 3, 5].includes(chapter.index) && map) {
+        console.log('Rotating map during chapter:', chapter.index);
+        map.once('moveend', () => {
+            const rotateNumber = map.getBearing();
+            map.rotateTo(rotateNumber + 180, {
+                duration: 30000,
+                easing: function (t) {
+                    return t;
+                }
             });
-        }
+        });
+    }
 
-        // Check if the chapter index is for 'map2' rotation
-        if ([2, 4, 6].includes(chapter.index)) {
-            console.log('Rotating map2 during chapter:', chapter.index);
-            map2.once('moveend', () => {
-                const rotateNumber = map2.getBearing();
-                map2.rotateTo(rotateNumber + 180, {
-                    duration: 30000,
-                    easing: function (t) {
-                        return t;
-                    }
-                });
+    if ([2, 4, 6].includes(chapter.index) && map2) {
+        console.log('Rotating map2 during chapter:', chapter.index);
+        map2.once('moveend', () => {
+            const rotateNumber = map2.getBearing();
+            map2.rotateTo(rotateNumber + 180, {
+                duration: 30000,
+                easing: function (t) {
+                    return t;
+                }
             });
-        }
+        });
+    }
+    
+// Other logic remains unchanged
+if (config.inset) {
+    if (chapter.location.zoom < 5) {
+        insetMap.flyTo({ center: chapter.location.center, zoom: 0 });
+    } else {
+        insetMap.flyTo({ center: chapter.location.center, zoom: 3 });
+    }
+}
+if (config.showMarkers) {
+    marker.setLngLat(chapter.location.center);
+}
+if (chapter.onChapterEnter && Array.isArray(chapter.onChapterEnter) && chapter.onChapterEnter.length > 0) {
+    chapter.onChapterEnter.forEach(setLayerOpacity);
+}
+if (chapter.callback) {
+    window[chapter.callback]();
+}
+})
+.onStepExit(response => {
+var chapter = config.chapters.find(chap => chap.id === response.element.id);
+response.element.classList.remove('active');
+if (chapter.onChapterExit && Array.isArray(chapter.onChapterExit) && chapter.onChapterExit.length > 0) {
+    chapter.onChapterExit.forEach(setLayerOpacity);
+}
+});
 
-        // Other logic remains unchanged
-        if (config.inset) {
-            if (chapter.location.zoom < 5) {
-                insetMap.flyTo({ center: chapter.location.center, zoom: 0 });
-            } else {
-                insetMap.flyTo({ center: chapter.location.center, zoom: 3 });
-            }
-        }
-        if (config.showMarkers) {
-            marker.setLngLat(chapter.location.center);
-        }
-        if (chapter.onChapterEnter.length > 0) {
-            chapter.onChapterEnter.forEach(setLayerOpacity);
-        }
-        if (chapter.callback) {
-            window[chapter.callback]();
-        }
-    })
-    .onStepExit(response => {
-        var chapter = config.chapters.find(chap => chap.id === response.element.id);
-        response.element.classList.remove('active');
-        if (chapter.onChapterExit.length > 0) {
-            chapter.onChapterExit.forEach(setLayerOpacity);
-        }
-    });
+
 
 
 });
