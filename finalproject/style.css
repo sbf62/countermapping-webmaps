@@ -72,6 +72,32 @@
     max-width: 80vw; /* Set a larger width as needed */
 }
 
+#interlude2 {
+    display: flex;
+    width: 100vw;
+    box-sizing: border-box;
+}
+
+#interlude2 .left-text,
+#interlude2 .right-text {
+    flex: 1;
+    padding: 20px; /* Adjust padding as needed */
+    font-size: 1.2vh;
+    text-align: justify;
+    box-sizing: border-box; /* Add box-sizing property */
+}
+
+#interlude2 .right-text {
+    margin-left: 20px; /* Add margin to separate the text */
+    border-left: 2px solid #ddd; /* Add a border between left and right sections */
+}
+
+
+
+
+
+
+
 video {
     margin-left: 45vw;
     width:32%;
