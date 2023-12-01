@@ -11,13 +11,18 @@ var config = {
     use3dTerrain: false, //set true for enabling 3D maps.
     title: 'Housing Crises Across the World',
     subtitle: 'New York City v Amsterdam',
-    byline: 'By Stella Frank',
+    byline: '',
 
-    para1:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse pulvinar lacus nec risus tempus, in pulvinar quam suscipit. Aliquam ultrices blandit quam, ac convallis ligula egestas eu. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin et enim vitae ex pellentesque porttitor. Duis eu diam sed purus varius auctor. Morbi nec consequat mi, et pulvinar tortor. Curabitur auctor iaculis magna eu volutpat. Cras tristique odio ligula, vitae rutrum nibh porta quis. Sed porttitor non augue non fringilla. Donec ac enim vel metus dapibus cursus.',
-	para2:'Proin consequat aliquam turpis, at tincidunt dolor mattis eu. Curabitur vestibulum sed tellus a molestie. Nam cursus a turpis eget varius. Ut imperdiet dui nec dignissim cursus. Aliquam a sem sit amet velit ornare tristique. Morbi eu dui at mauris dapibus dignissim. Nam ultrices porta neque, ac tincidunt sem suscipit iaculis. Maecenas fermentum gravida justo vel volutpat. Donec iaculis sapien odio, ut tincidunt est rhoncus quis. In a purus massa. Sed varius ipsum et purus convallis, eget molestie ligula tristique. Morbi non nisi vel sapien ultricies ultrices. Cras sed est aliquet, tempus orci eget, condimentum mi. Nullam magna sem, interdum in nunc vel, elementum commodo tortor. Phasellus velit ipsum, tincidunt eu rutrum vel, scelerisque ac nulla. Nunc sodales elit et velit varius, at porta lorem aliquet.',
-
-    
-    footer: 'Source: source citations, etc. <br> Created using <a href="https://github.com/mapbox/storytelling" target="_blank">Mapbox Storytelling</a> template.',
+    para1:'While both New York City and Amsterdam share the common goal of addressing housing challenges, their approaches can sometimes clash due to differences in their policy frameworks, cultural contexts, and economic models. This website aims to compare NYCHA housing in NYC to Social Housing in Amsterdam. Here are a few areas where their approaches may diverge:',
+	para2:'Allocation Method -',
+	para3: 'Amsterdam has a centralized allocation system, while NYCHA housing operates through decentralized developments.',
+	para4: 'Income Criteria -',
+	para5: 'Both programs use income criteria, but the specific thresholds and calculations may differ. The standardized 30% of adjusted gross income used by NYCHA provides consistency across its housing developments, simplifying the rent calculation process and ensuring a uniform approach. While both cities use a percentage of income to calculate rent, Amsterdam may provide more flexibility in the specific percentage applied, allowing for variations based on local policies and housing association guidelines.',
+	para6: 'Housing Options -',
+	para7: 'Social housing in Amsterdam includes a range of housing options, from apartments to family homes, catering to various household sizes and needs. Whereas NYCHA provides housing in the form of large-scale apartment complexes, with the aim of addressing the demand for affordable housing in various neighborhoods.',
+	para8: 'Now lets further explore specific indicators of housing crisis in either city!',
+	
+  
     chapters: [
         {
             id: 'chapter1',
@@ -71,31 +76,14 @@ var config = {
                 //curve: 1, // change the speed at which it zooms out
             },
             mapAnimation: 'flyTo',
-            rotateAnimation: true,
+            rotateAnimation: false,
             callback: '',
             onChapterEnter: [],
             onChapterExit: []
         },
-
-
-        {
-    id: 'interlude',
-    alignment: 'center',
-    hidden: false,
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ultricies tempor purus, eget tempus sem bibendum vel. Maecenas at justo non felis accumsan condimentum vitae et leo. Sed sodales nec risus maximus congue. Ut quis tincidunt leo. Pellentesque sapien nisl, congue tempus mauris in, pulvinar mattis turpis. Nullam sit amet justo egestas, laoreet mauris ut, pulvinar ipsum. Pellentesque vehicula imperdiet iaculis. Nam in tellus metus. Donec a est non orci efficitur ornare id mattis eros. Aliquam vel facilisis ligula. Nullam tincidunt, sapien vitae bibendum consequat, nibh eros eleifend ligula, et aliquam enim justo eget felis. Sed nec vehicula metus. Pellentesque rutrum dui quis egestas hendrerit. Nullam auctor et tortor sit amet congue.',
-    video: 'images/vid.mp4',
-    location: {
-      center: [-73.97615, 40.71901],
-      zoom: 14.84,
-      pitch: 48,
-      bearing: 142.44,
-    }
-	},
-
-
     {
     id: 'chapter3',
-            alignment: 'left',
+            alignment: 'right',
             hidden: false,
             index: 2,
             title: 'Third Title',
@@ -103,7 +91,7 @@ var config = {
             description: 'Copy these sections to add to your story.',
             location: {
               center: [-73.97615, 40.71901],
-              zoom: 15.84,
+              zoom: 8.5,
               pitch: 56,
               bearing: 260.44,
               speed: .5, // make the flying slow
@@ -123,7 +111,7 @@ var config = {
 
             {
             id: 'chapter4',
-            alignment: 'right',
+            alignment: 'left',
             hidden: false,
             index: 3,
             title: 'The Housing Crisis in Amsterdam',
@@ -137,14 +125,14 @@ var config = {
 
             },
             mapAnimation: 'flyTo',
-            rotateAnimation: true,
+            rotateAnimation: false,
             callback: '',
             onChapterEnter: [],
             onChapterExit: []
         },
             {
             id: 'chapter5',
-            alignment: 'left',
+            alignment: 'right',
             hidden: false,
             index: 4,
             title: 'The Housing Crisis in Amsterdam',
@@ -165,7 +153,7 @@ var config = {
         },
             {
             id: 'chapter6',
-            alignment: 'right',
+            alignment: 'left',
             hidden: false,
             index: 5,
             title: 'The Housing Crisis in Amsterdam',
@@ -179,11 +167,31 @@ var config = {
 
             },
             mapAnimation: 'flyTo',
-            rotateAnimation: true,
+            rotateAnimation: false,
             callback: '',
             onChapterEnter: [],
             onChapterExit: []
         },
+
+        {
+    id: 'interlude',
+    alignment: 'center',
+    hidden: false,
+        paragraphs: [
+        'Let\'s give an example of someone looking for affordable housing through these routes and compare them.',
+        'Name: Alex Rodriguez.',
+        'Income: $30,000 annually.',
+        'Current housing situation: Alex currently lives in a small rented apartment. However, the high cost of living in the city, combined with her modest income, has made it increasingly challenging for her to afford rent and other basic necessities. Alex is determined to find more affordable housing options to ease her financial burden. Alex is seeking stable and affordable housing that will allow her to save money, improve her overall financial situation, and focus on her personal and professional growth.',
+        'Alex has been searching for affordable housing alternatives, and she has identified NYCHA (New York City Housing Authority) as a potential option due to its subsidized rates for low-income individuals. She understands that the application process may have specific eligibility criteria, and she is prepared to provide all necessary documentation to prove her income level and housing need. She also has interest in social housing in Amsterdam. Amsterdam\'s cost of living may be comparatively lower than New York City, allowing Alex to stretch her income further and save more effectively. Also, the social housing system in Amsterdam is specifically desif=gned designed to ensure a decent quality of life for residents, aligning with Alex’s goals of achieving stability and well-being.',
+    ],
+    location: {
+        center: [-73.97615, 40.71901],
+        zoom: 14.84,
+        pitch: 48,
+        bearing: 142.44,
+    }
+}
+
 
     ]
 };
