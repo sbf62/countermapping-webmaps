@@ -74,6 +74,43 @@ if (config.para2) {
     header.appendChild(bylineText);
 }
 
+if (config.para3) {
+    var bylineText = document.createElement('p');
+    bylineText.innerText = config.para3;
+    header.appendChild(bylineText);
+}
+
+if (config.para4) {
+    var bylineText = document.createElement('p');
+    bylineText.innerText = config.para4;
+    header.appendChild(bylineText);
+}
+
+if (config.para5) {
+    var bylineText = document.createElement('p');
+    bylineText.innerText = config.para5;
+    header.appendChild(bylineText);
+}
+
+if (config.para6) {
+    var bylineText = document.createElement('p');
+    bylineText.innerText = config.para6;
+    header.appendChild(bylineText);
+}
+
+if (config.para7) {
+    var bylineText = document.createElement('p');
+    bylineText.innerText = config.para7;
+    header.appendChild(bylineText);
+}
+
+if (config.para8) {
+    var bylineText = document.createElement('p');
+    bylineText.innerText = config.para8;
+    header.appendChild(bylineText);
+}
+
+
 if (header.innerText.length > 0) {
     header.classList.add(config.theme);
     header.setAttribute('id', 'header');
@@ -89,6 +126,14 @@ config.chapters.forEach((record, idx) => {
         title.innerText = record.title;
         chapter.appendChild(title);
     }
+
+    if (record.paragraphs) {
+    record.paragraphs.forEach(para => {
+        var paraText = document.createElement('p');
+        paraText.innerText = para;
+        chapter.appendChild(paraText);
+    });
+}
 
     if (record.image) {
         var image = new Image();
