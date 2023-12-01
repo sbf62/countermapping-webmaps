@@ -10,9 +10,17 @@
         #map {
             top:0;
             height: 100vh;
-            width:100vw;
+            width:50vw;
             position: fixed;
         }
+        #map2 {
+    top: 0;
+    height: 100vh;
+    width: 50vw;
+    right: 0; /* Positioning the second map to the right */
+    position: fixed;
+}
+
         #mapInset {
             bottom:50px;
             right:30px;
@@ -34,40 +42,38 @@
             }
         }
         #header {
-            margin: auto;
-            width: 100%;
-            position: relative;
-            z-index: 5;
-            background-image: url("images/sandy1.png");
+    margin: auto;
+    width: 100%;
+    position: relative;
+    z-index: 5;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: 100vw 40vh; /* Set the height to 30% of the viewport height */
+}
 
-            background-position: top;
-            background-repeat: no-repeat;
-            background-size: 100vw 100vh;
-            height:170vh;
-            background-color:white;
-        }
-        #header h1, #header h2, #header p {
+#header h1 {
+    font-size: 7vh;
+    color: black;
+    padding-top: 5vh;
+    margin-left: 10vh; 
+    margin-right: 10vh;/* Adjust the padding as needed */
+}
 
-            margin: 0;
-            padding: 2vh 2vw;
-            text-align: center;
-        }
-        #header h1{
-            font-size: 7vh;
-            color: white;
-            padding-top:30vh; 
-        }
-        #header h2{
-            padding-bottom:60vh;
-            color: white;
-        }
-        #header p {
-            font-size: 1.2vh;
-            text-align: justify;
-            margin-left: 34vw;
-            margin-right: 34vw;
-            color:black;
-        }
+#header h2 {
+    padding-bottom: 5vh;
+    margin-left: 50vh; 
+    margin-right: 40vh; /* Adjust the padding as needed */
+    color: black;
+}
+
+#header p {
+    font-size: 2vh;
+    text-align: justify;
+    margin-left: 15vw;
+    margin-right: 15vw;
+    color: black;
+}
+
 
         #interlude {
         width: 100vw;
@@ -96,7 +102,7 @@ video {
             padding-bottom: 2vh;
             text-align: center;
             line-height: 25px;
-            font-size: 13px;
+            font-size: 0px;
             position: relative;
             z-index: 5;
         }
