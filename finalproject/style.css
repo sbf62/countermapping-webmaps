@@ -21,21 +21,6 @@
     position: fixed;
 }
 
-        #mapInset {
-            bottom:50px;
-            right:30px;
-            height: 180px;
-            width:250px;
-            max-width:100%;
-            position: fixed;
-            z-index: 1;
-            opacity: 1;
-            transition: opacity 0.5s ease-in-out;
-            pointer-events: none;
-        }
-        #mapInset .mapboxgl-ctrl-bottom-left{
-            display: none;
-        }
         @media (max-width: 500px) {
             #mapInset {
                 display: none;
@@ -48,7 +33,7 @@
     z-index: 5;
     background-position: top;
     background-repeat: no-repeat;
-    background-size: 100vw 40vh; /* Set the height to 30% of the viewport height */
+    background-size: 100vw 60vh; 
 }
 
 #header h1 {
@@ -79,13 +64,13 @@
         width: 100vw;
         }
 
-        #interlude p{
-        font-size: 1.2vh;
-        text-align: justify;
-        margin-left: 34vw;
-        margin-right: 34vw;
-        background-color: white;
-        }
+        #interlude p {
+    font-size: 2vh;
+    text-align: justify;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 80vw; /* Set a larger width as needed */
+}
 
 video {
     margin-left: 45vw;
@@ -102,7 +87,7 @@ video {
             padding-bottom: 2vh;
             text-align: center;
             line-height: 25px;
-            font-size: 0px;
+            font-size: 15px;
             position: relative;
             z-index: 5;
         }
