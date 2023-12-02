@@ -72,32 +72,19 @@
     max-width: 80vw; /* Set a larger width as needed */
 }
 
-#interlude2.split-text {
+#interlude2 {
     display: flex;
-    width: 100vw; /* Full width */
-    box-sizing: border-box;
+    justify-content: space-between;
 }
 
-#interlude2.split-text .leftText,
-#interlude2.split-text .rightText {
-    flex: 1;
-    padding: 20px; /* Adjust padding as needed */
+#interlude2 .leftText,
+#interlude2 .rightText {
+    width: 48%; /* Adjust the width as needed, leaving some space for margins */
+    padding: 20px;
     font-size: 1.2vh;
     text-align: justify;
     box-sizing: border-box;
 }
-
-#interlude2.split-text .rightText {
-    background-color: #f4f4f4; /* Adjust background color as needed */
-    border-left: 2px solid #ddd; /* Add a border between left and right sections */
-}
-
-/* Additional CSS to position the text boxes */
-#interlude2.split-text .leftText {
-    margin-right: 10px; /* Adjust the margin as needed to create spacing between the text boxes */
-}
-
-
 
 
 
