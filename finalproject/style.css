@@ -72,25 +72,30 @@
     max-width: 80vw; /* Set a larger width as needed */
 }
 #interlude2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+    align-items: flex-start;
+    padding: 20px;
+    font-size: 1.2vh;
+    text-align: justify;
     box-sizing: border-box;
 }
 
 #interlude2 .leftText,
 #interlude2 .rightText {
+    flex: 1;
+    width: 48%;
     box-sizing: border-box;
-    padding: 20px;
-    font-size: 1.2vh;
-    text-align: justify;
 }
 
 #interlude2 .rightText {
     background-color: #f4f4f4;
     border-left: 2px solid #ddd;
+    padding-left: 20px; /* Add padding to separate the border from text */
 }
+
+
 
 
 
