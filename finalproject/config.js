@@ -36,24 +36,19 @@ var config = {
                 center: [-73.97615, 40.71901],
                 zoom: 8.5,
                 pitch: 60,
-                bearing: 0
+                bearing: -43.2,
+                // flyTo additional controls-
+                // These options control the flight curve, making it move
+                // slowly and zoom out almost completely before starting
+                // to pan.
+                //speed: 2, // make the flying slow
+                //curve: 1, // change the speed at which it zooms out
             },
-            mapAnimation: 'flyTo',
-            rotateAnimation: true,
+           
+            
             callback: '',
-            onChapterEnter: [
-                // {
-                //     layer: 'layer-name',
-                //     opacity: 1,
-                //     duration: 5000
-                // }
-            ],
-            onChapterExit: [
-                // {
-                //     layer: 'layer-name',
-                //     opacity: 0
-                // }
-            ]
+            onChapterEnter: [],
+            onChapterExit: []
         },
         {
             id: 'chapter2',
@@ -75,8 +70,7 @@ var config = {
                 //speed: 2, // make the flying slow
                 //curve: 1, // change the speed at which it zooms out
             },
-            mapAnimation: 'flyTo',
-            rotateAnimation: false,
+            
             callback: '',
             onChapterEnter: [],
             onChapterExit: []
@@ -91,21 +85,20 @@ var config = {
             description: 'Copy these sections to add to your story.',
             location: {
               center: [-73.97615, 40.71901],
-              zoom: 8.5,
-              pitch: 56,
-              bearing: 260.44,
-              speed: .5, // make the flying slow
-              curve: 1, // change the speed at which it zooms out
+                zoom: 8.5,
+                pitch: 60,
+                bearing: -43.2,
+                // flyTo additional controls-
+                // These options control the flight curve, making it move
+                // slowly and zoom out almost completely before starting
+                // to pan.
+                //speed: 2, // make the flying slow
+                //curve: 1, // change the speed at which it zooms out
             },
             mapAnimation: 'flyTo',
-            rotateAnimation: true,
+            rotateAnimation: false,
             callback: '',
-            onChapterEnter: [
-                {
-                    layer: 'housing',
-                    opacity: 0,
-                    duration: 10
-                }],
+            onChapterEnter: [],
             onChapterExit: []
     },
 
@@ -122,7 +115,12 @@ var config = {
                 zoom: 8.5,
                 pitch: 60,
                 bearing: -43.2,
-
+                // flyTo additional controls-
+                // These options control the flight curve, making it move
+                // slowly and zoom out almost completely before starting
+                // to pan.
+                //speed: 2, // make the flying slow
+                //curve: 1, // change the speed at which it zooms out
             },
             mapAnimation: 'flyTo',
             rotateAnimation: false,
@@ -143,10 +141,15 @@ var config = {
                 zoom: 8.5,
                 pitch: 60,
                 bearing: -43.2,
-  
+                // flyTo additional controls-
+                // These options control the flight curve, making it move
+                // slowly and zoom out almost completely before starting
+                // to pan.
+                //speed: 2, // make the flying slow
+                //curve: 1, // change the speed at which it zooms out
             },
             mapAnimation: 'flyTo',
-            rotateAnimation: true,
+            rotateAnimation: false,
             callback: '',
             onChapterEnter: [],
             onChapterExit: []
@@ -164,7 +167,12 @@ var config = {
                 zoom: 8.5,
                 pitch: 60,
                 bearing: -43.2,
-
+                // flyTo additional controls-
+                // These options control the flight curve, making it move
+                // slowly and zoom out almost completely before starting
+                // to pan.
+                //speed: 2, // make the flying slow
+                //curve: 1, // change the speed at which it zooms out
             },
             mapAnimation: 'flyTo',
             rotateAnimation: false,
@@ -187,9 +195,9 @@ var config = {
     ],
     location: {
         center: [-73.97615, 40.71901],
-        zoom: 14.84,
-        pitch: 48,
-        bearing: 142.44,
+                        zoom: 8.5,
+                pitch: 60,
+                bearing: -43.2,
     }
 },
 
@@ -222,18 +230,21 @@ var config = {
     ],
     location: {
         center: [-73.97615, 40.71901],
-        zoom: 14.84,
-        pitch: 48,
-        bearing: 142.44,
-    },
-    onChapterEnter: [
-        {
-            layer: 'housing',
-            opacity: 0,
-            duration: 10
-        }
-    ],
-    onChapterExit: [],
+                zoom: 8.5,
+                pitch: 60,
+                bearing: -43.2,
+                // flyTo additional controls-
+                // These options control the flight curve, making it move
+                // slowly and zoom out almost completely before starting
+                // to pan.
+                //speed: 2, // make the flying slow
+                //curve: 1, // change the speed at which it zooms out
+            },
+            mapAnimation: 'flyTo',
+            rotateAnimation: false,
+            callback: '',
+            onChapterEnter: [],
+            onChapterExit: [],
 render: function () {
     // Create container div
     var container = document.createElement('div');
