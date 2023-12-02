@@ -71,30 +71,27 @@
     margin-right: auto;
     max-width: 80vw; /* Set a larger width as needed */
 }
-
 #interlude2 {
-    display: flex;
-    justify-content: space-between;
-    width: 100vw; /* Full width */
-    align-items: flex-start; /* Align items to the start (top) */
-    padding: 20px; /* Adjust padding as needed */
-    font-size: 1.2vh;
-    text-align: justify;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    width: 100%;
     box-sizing: border-box;
 }
 
 #interlude2 .leftText,
 #interlude2 .rightText {
-    flex: 1;
-    width: 48%; /* Each text box takes up 48% of the width */
     box-sizing: border-box;
-    align-self: flex-start; /* Align the text boxes to the start (top) */
+    padding: 20px;
+    font-size: 1.2vh;
+    text-align: justify;
 }
 
 #interlude2 .rightText {
-    background-color: #f4f4f4; /* Adjust background color as needed */
-    border-left: 2px solid #ddd; /* Add a border between left and right sections */
+    background-color: #f4f4f4;
+    border-left: 2px solid #ddd;
 }
+
 
 
 
