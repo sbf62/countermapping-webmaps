@@ -72,19 +72,21 @@
     max-width: 80vw; /* Set a larger width as needed */
 }
 
-#interlude2 {
-    display: flex;
-    justify-content: space-between;
-}
-
-#interlude2 .leftText,
-#interlude2 .rightText {
-    width: 48%; /* Adjust the width as needed, leaving some space for margins */
+#interlude2 .interlude-text {
+    width: 48%;
     padding: 20px;
     font-size: 1.2vh;
     text-align: justify;
     box-sizing: border-box;
 }
+
+#interlude2 .rightText {
+    float: right;
+    clear: right;
+    background-color: #f4f4f4;
+    border-left: 2px solid #ddd;
+}
+
 
 
 
