@@ -226,34 +226,38 @@ var config = {
     ],
     onChapterExit: [],
 render: function () {
-    // Create container div
+    // Create container div for interlude2
     var container = document.createElement('div');
     container.setAttribute('id', 'interlude2');
-    container.classList.add('step', 'centered', 'split-text');
+    container.classList.add('step', 'centered');
 
-    // Create left text div
-    var leftTextDiv = document.createElement('div');
-    leftTextDiv.classList.add('leftText');
+    // Create left text container
+    var leftTextContainer = document.createElement('div');
+    leftTextContainer.classList.add('leftText');
+
+    // Populate left text container
     config.chapters[6].leftText.forEach(para => {
         var paraText = document.createElement('p');
         paraText.innerText = para;
-        leftTextDiv.appendChild(paraText);
+        leftTextContainer.appendChild(paraText);
     });
 
-    // Create right text div
-    var rightTextDiv = document.createElement('div');
-    rightTextDiv.classList.add('rightText');
+    // Create right text container
+    var rightTextContainer = document.createElement('div');
+    rightTextContainer.classList.add('rightText');
+
+    // Populate right text container
     config.chapters[6].rightText.forEach(para => {
         var paraText = document.createElement('p');
         paraText.innerText = para;
-        rightTextDiv.appendChild(paraText);
+        rightTextContainer.appendChild(paraText);
     });
 
-    // Append left and right text to the container
-    container.appendChild(leftTextDiv);
-    container.appendChild(rightTextDiv);
+    // Append left and right text containers to the main container
+    container.appendChild(leftTextContainer);
+    container.appendChild(rightTextContainer);
 
-    // Append the container to the story
+    // Append the main container to the story
     document.getElementById('features').appendChild(container);
 }
 },
