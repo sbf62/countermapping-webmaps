@@ -134,19 +134,26 @@ config.chapters.forEach((record, idx) => {
         chapter.appendChild(paraText);
     });
 }
+if (record.id === 'interlude2') {
+    var leftTextDiv = document.createElement('div');
+    record.leftText.forEach(para => {
+        var paraText = document.createElement('p');
+        paraText.innerText = para;
+        leftTextDiv.appendChild(paraText);
+    });
+    leftTextDiv.classList.add('leftText');
 
-    if (record.id === 'interlude2') {
-        var leftTextDiv = document.createElement('div');
-        leftTextDiv.innerHTML = record.leftText;
-        leftTextDiv.classList.add('left-text');
+    var rightTextDiv = document.createElement('div');
+    record.rightText.forEach(para => {
+        var paraText = document.createElement('p');
+        paraText.innerText = para;
+        rightTextDiv.appendChild(paraText);
+    });
+    rightTextDiv.classList.add('rightText');
 
-        var rightTextDiv = document.createElement('div');
-        rightTextDiv.innerHTML = record.rightText;
-        rightTextDiv.classList.add('right-text');
-
-        chapter.appendChild(leftTextDiv);
-        chapter.appendChild(rightTextDiv);
-    }
+    chapter.appendChild(leftTextDiv);
+    chapter.appendChild(rightTextDiv);
+}
 
     if (record.image) {
         var image = new Image();
@@ -318,7 +325,7 @@ scroller
             });
         });
     }
-    
+
 // Other logic remains unchanged
 if (config.inset) {
     if (chapter.location.zoom < 5) {
