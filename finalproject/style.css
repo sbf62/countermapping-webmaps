@@ -72,28 +72,24 @@
     max-width: 80vw; /* Set a larger width as needed */
 }
 
-#interlude2 {
+#interlude2.split-text {
     display: flex;
-    width: 100vw;
+    width: 100%;
     box-sizing: border-box;
 }
 
-#interlude2 .left-text,
-#interlude2 .right-text {
+#interlude2.split-text .leftText,
+#interlude2.split-text .rightText {
     flex: 1;
     padding: 20px; /* Adjust padding as needed */
     font-size: 1.2vh;
     text-align: justify;
-    box-sizing: border-box; /* Add box-sizing property */
 }
 
-#interlude2 .right-text {
-    margin-left: 20px; /* Add margin to separate the text */
+#interlude2.split-text .rightText {
+    background-color: #f4f4f4; /* Adjust background color as needed */
     border-left: 2px solid #ddd; /* Add a border between left and right sections */
 }
-
-
-
 
 
 
