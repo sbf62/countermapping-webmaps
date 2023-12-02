@@ -225,39 +225,44 @@ var config = {
         }
     ],
     onChapterExit: [],
-    render: function () {
-        // Create container div
-        var container = document.createElement('div');
-        container.setAttribute('id', 'interlude2');
-        container.classList.add('step', 'centered');
+render: function () {
+    // Create container div
+    var container = document.createElement('div');
+    container.setAttribute('id', 'interlude2');
+    container.classList.add('step', 'centered', 'split-text'); // Add the 'split-text' class
 
-       // Create left text div
-var leftTextDiv = document.createElement('div');
-config.chapters[6].leftText.forEach(para => {
-    var paraText = document.createElement('p');
-    paraText.innerText = para;
-    leftTextDiv.appendChild(paraText);
-});
-leftTextDiv.classList.add('full-width-text', 'left-text');
+    // Create left text div
+    var leftTextDiv = document.createElement('div');
+    config.chapters[6].leftText.forEach(para => {
+        var paraText = document.createElement('p');
+        paraText.innerText = para;
+        leftTextDiv.appendChild(paraText);
+    });
+    leftTextDiv.classList.add('full-width-text', 'leftText');
 
-// Create right text div
-var rightTextDiv = document.createElement('div');
-config.chapters[6].rightText.forEach(para => {
-    var paraText = document.createElement('p');
-    paraText.innerText = para;
-    rightTextDiv.appendChild(paraText);
-});
-rightTextDiv.classList.add('full-width-text', 'right-text');
+    // Create right text div
+    var rightTextDiv = document.createElement('div');
+    config.chapters[6].rightText.forEach(para => {
+        var paraText = document.createElement('p');
+        paraText.innerText = para;
+        rightTextDiv.appendChild(paraText);
+    });
+    rightTextDiv.classList.add('full-width-text', 'rightText');
 
+    // Adjust styles for left and right text divs
+    leftTextDiv.style.width = '50%'; // Set the width to 50% for left text
+    rightTextDiv.style.width = '50%'; // Set the width to 50% for right text
+    rightTextDiv.style.borderLeft = '2px solid #ddd'; // Add a border between left and right sections
 
-        // Append left and right text to the container
-        container.appendChild(leftTextDiv);
-        container.appendChild(rightTextDiv);
+    // Append left and right text to the container
+    container.appendChild(leftTextDiv);
+    container.appendChild(rightTextDiv);
 
-        // Append the container to the story
-        document.getElementById('features').appendChild(container);
-    }
+    // Append the container to the story
+    document.getElementById('features').appendChild(container);
+}
 },
+
 
 
 
