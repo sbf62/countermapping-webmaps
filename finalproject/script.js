@@ -135,21 +135,28 @@ config.chapters.forEach((record, idx) => {
     });
 }
 if (record.id === 'interlude2') {
-    var leftTextDiv = document.createElement('div');
-    record.leftText.forEach(para => {
+// Create left text div
+var leftTextDiv = document.createElement('div');
+if (config.chapters[7] && config.chapters[7].leftText) { // Use index 7 since it's the eighth chapter (0-indexed)
+    config.chapters[7].leftText.forEach(para => {
         var paraText = document.createElement('p');
         paraText.innerText = para;
         leftTextDiv.appendChild(paraText);
     });
-    leftTextDiv.classList.add('leftText');
+}
+leftTextDiv.classList.add('interlude-text', 'leftText');
 
-    var rightTextDiv = document.createElement('div');
-    record.rightText.forEach(para => {
+// Create right text div
+var rightTextDiv = document.createElement('div');
+if (config.chapters[7] && config.chapters[7].rightText) { // Use index 7 since it's the eighth chapter (0-indexed)
+    config.chapters[7].rightText.forEach(para => {
         var paraText = document.createElement('p');
         paraText.innerText = para;
         rightTextDiv.appendChild(paraText);
     });
-    rightTextDiv.classList.add('rightText');
+}
+rightTextDiv.classList.add('interlude-text', 'rightText');
+
 
     chapter.appendChild(leftTextDiv);
     chapter.appendChild(rightTextDiv);
