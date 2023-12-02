@@ -200,17 +200,24 @@ var config = {
     index: 7,
     leftText: [
         'Timeline for NYCHA Housing - ',
-        'Document Preperation (2-3 weeks): Alex takes 2-3 weeks to gather necessary documents, such as pay stubs and tax returns.',
-        'Application Submission (1 day): Alex submits her application online or in person.',
-        'Waiting and Follow-Ups (2-5 years): Although the length of this process fluxuates greatly, at the time this housing data was collected (~2010), someone like Alex could expect to wait 2-5 years. In the mean time they would have to explore other housing options, a homeless shelter would put her on a priority list for NYCHA housing, however is a last resort. She may have to look at other affordable housing options, like hosuing lotteries or section 8 housing in this time.',
-        'The Call and Move (1-2 months): Once notified, Alex has 1-2 months to make a decision and potentially move into the new apartment.',
+        'Document Preperation (2-3 weeks):',
+        ' Alex takes 2-3 weeks to gather necessary documents, such as pay stubs and tax returns.',
+        'Application Submission (1 day):',
+        ' Alex submits her application online or in person.',
+        'Waiting and Follow-Ups (2-5 years):',
+        ' Although the length of this process fluxuates greatly, at the time this housing data was collected (~2010), someone like Alex could expect to wait 2-5 years. In the mean time they would have to explore other housing options, a homeless shelter would put her on a priority list for NYCHA housing, however is a last resort. She may have to look at other affordable housing options, like hosuing lotteries or section 8 housing in this time.',
+        'The Call and Move (1-2 months):',
+        ' Once notified, Alex has 1-2 months to make a decision and potentially move into the new apartment.',
         'Total Time : 2.2 - 5.25 years'
     ],
     rightText: [
         'Timeline for Social Housing - ',
-        'Document Preperation (1-3 weeks): Alex takes 1-3 weeks to fill out the online registration form and submit proof of income.',
-        'Waiting and Follow Up (1-3 years): Although the length of this process also fluxuates greatly, at the time this housing data was collected (~2010), someone like Alex could expect to wait a 1-3 years. In the mean time they would have to explore other housing options, like co-housing communities or anti-squatting programs.',
-        'The Call and Move: (1-2 months): After receiving an email about an available apartment, Alex has 1-2 months to visit for a viewing and make a decision.',
+        'Document Preperation (1-3 weeks):',
+        ' Alex takes 1-3 weeks to fill out the online registration form and submit proof of income.',
+        'Waiting and Follow Up (1-3 years):',
+        ' Although the length of this process also fluxuates greatly, at the time this housing data was collected (~2010), someone like Alex could expect to wait a 1-3 years. In the mean time they would have to explore other housing options, like co-housing communities or anti-squatting programs.',
+        'The Call and Move: (1-2 months):',
+        ' After receiving an email about an available apartment, Alex has 1-2 months to visit for a viewing and make a decision.',
         'Total Time : 1.1 - 3.25 years'
     ],
     location: {
