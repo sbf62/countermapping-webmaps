@@ -229,7 +229,7 @@ render: function () {
     // Create container div
     var container = document.createElement('div');
     container.setAttribute('id', 'interlude2');
-    container.classList.add('step', 'centered', 'split-text'); // Add the 'split-text' class
+    container.classList.add('step', 'centered', 'split-text');
 
     // Create left text div
     var leftTextDiv = document.createElement('div');
@@ -238,7 +238,7 @@ render: function () {
         paraText.innerText = para;
         leftTextDiv.appendChild(paraText);
     });
-    leftTextDiv.classList.add('full-width-text', 'leftText');
+    leftTextDiv.classList.add('leftText');
 
     // Create right text div
     var rightTextDiv = document.createElement('div');
@@ -247,12 +247,7 @@ render: function () {
         paraText.innerText = para;
         rightTextDiv.appendChild(paraText);
     });
-    rightTextDiv.classList.add('full-width-text', 'rightText');
-
-    // Adjust styles for left and right text divs
-    leftTextDiv.style.width = '50%'; // Set the width to 50% for left text
-    rightTextDiv.style.width = '50%'; // Set the width to 50% for right text
-    rightTextDiv.style.borderLeft = '2px solid #ddd'; // Add a border between left and right sections
+    rightTextDiv.classList.add('rightText');
 
     // Append left and right text to the container
     container.appendChild(leftTextDiv);
