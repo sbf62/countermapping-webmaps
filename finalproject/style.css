@@ -74,6 +74,7 @@
 
 #interlude2.split-text {
     display: flex;
+    width: 100vw; /* Full width */
     box-sizing: border-box;
 }
 
@@ -84,13 +85,18 @@
     font-size: 1.2vh;
     text-align: justify;
     box-sizing: border-box;
-    width: 50%; /* Set the width to 50% for a two-column layout */
 }
 
 #interlude2.split-text .rightText {
     background-color: #f4f4f4; /* Adjust background color as needed */
     border-left: 2px solid #ddd; /* Add a border between left and right sections */
 }
+
+/* Additional CSS to position the text boxes */
+#interlude2.split-text .leftText {
+    margin-right: 10px; /* Adjust the margin as needed to create spacing between the text boxes */
+}
+
 
 
 
