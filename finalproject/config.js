@@ -233,21 +233,21 @@ render: function () {
 
     // Create left text div
     var leftTextDiv = document.createElement('div');
+    leftTextDiv.classList.add('leftText');
     config.chapters[6].leftText.forEach(para => {
         var paraText = document.createElement('p');
         paraText.innerText = para;
         leftTextDiv.appendChild(paraText);
     });
-    leftTextDiv.classList.add('leftText');
 
     // Create right text div
     var rightTextDiv = document.createElement('div');
+    rightTextDiv.classList.add('rightText');
     config.chapters[6].rightText.forEach(para => {
         var paraText = document.createElement('p');
         paraText.innerText = para;
         rightTextDiv.appendChild(paraText);
     });
-    rightTextDiv.classList.add('rightText');
 
     // Append left and right text to the container
     container.appendChild(leftTextDiv);
