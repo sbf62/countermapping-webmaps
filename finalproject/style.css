@@ -88,6 +88,7 @@
     flex: 1;
     width: 48%; /* Each text box takes up 48% of the width */
     box-sizing: border-box;
+    align-self: flex-start; /* Align the text boxes to the start (top) */
 }
 
 #interlude2 .rightText {
