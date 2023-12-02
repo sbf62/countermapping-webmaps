@@ -88,8 +88,8 @@
 }
 
 #interlude2.split-text .rightText {
-    background-color: #f4f4f4;
-    border-left: 2px solid #ddd;
+    background-color: #f4f4f4; /* Adjust background color as needed */
+    border-left: 2px solid #ddd; /* Add a border between left and right sections */
 }
 
 
