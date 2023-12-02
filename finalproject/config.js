@@ -176,6 +176,7 @@ var config = {
         {
     id: 'interlude',
     alignment: 'center',
+    index: 6,
     hidden: false,
         paragraphs: [
         'Let\'s give an example of someone looking for affordable housing through these routes and compare them.',
@@ -196,6 +197,7 @@ var config = {
     id: 'interlude2',
     alignment: 'center',
     hidden: false,
+    index: 7,
     leftText: [
         'Timeline for NYCHA Housing - ',
         'Document Preperation (2-3 weeks): Alex takes 2-3 weeks to gather necessary documents, such as pay stubs and tax returns.',
@@ -226,40 +228,37 @@ var config = {
     ],
     onChapterExit: [],
 render: function () {
-    // Create container div for interlude2
+    // Create container div
     var container = document.createElement('div');
     container.setAttribute('id', 'interlude2');
     container.classList.add('step', 'centered');
 
-    // Create left text container
-    var leftTextContainer = document.createElement('div');
-    leftTextContainer.classList.add('leftText');
-
-    // Populate left text container
-    config.chapters[6].leftText.forEach(para => {
+    // Create left text div
+    var leftTextDiv = document.createElement('div');
+    leftTextDiv.classList.add('leftText');
+    config.chapters[7].leftText.forEach(para => {
         var paraText = document.createElement('p');
         paraText.innerText = para;
-        leftTextContainer.appendChild(paraText);
+        leftTextDiv.appendChild(paraText);
     });
 
-    // Create right text container
-    var rightTextContainer = document.createElement('div');
-    rightTextContainer.classList.add('rightText');
-
-    // Populate right text container
-    config.chapters[6].rightText.forEach(para => {
+    // Create right text div
+    var rightTextDiv = document.createElement('div');
+    rightTextDiv.classList.add('rightText');
+    config.chapters[7].rightText.forEach(para => {
         var paraText = document.createElement('p');
         paraText.innerText = para;
-        rightTextContainer.appendChild(paraText);
+        rightTextDiv.appendChild(paraText);
     });
 
-    // Append left and right text containers to the main container
-    container.appendChild(leftTextContainer);
-    container.appendChild(rightTextContainer);
+    // Append left and right text to the container
+    container.appendChild(leftTextDiv);
+    container.appendChild(rightTextDiv);
 
-    // Append the main container to the story
+    // Append the container to the story
     document.getElementById('features').appendChild(container);
-}
+},
+
 },
 
 
