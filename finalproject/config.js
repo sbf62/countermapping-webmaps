@@ -29,9 +29,9 @@ var config = {
             alignment: 'right',
             hidden: false,
             index: 0,
-            title: 'The Housing Crisis in NYC',
+            title: 'Homelessness in NYC by Borough',
             image: 'images/source.png',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+            description: 'The substantial difference in homelessness rates between Manhattan and Queens not only serves as a critical gauge of the housing crisis but also profoundly influences individuals\' choices about where to live and shapes the lived experiences of residents in these boroughs. The high incidence of homelessness in Manhattan may discourage prospective residents who are concerned about housing stability and affordability. It creates an environment where finding secure and affordable housing becomes a considerable challenge, influencing the residential preferences of those who prioritize housing security. On the contrary, the lower homelessness rates in Queens may make it a more appealing option for individuals seeking a more stable and affordable living situation. The housing crisis, as reflected in these disparate rates, thus plays a pivotal role in shaping the social fabric of each borough, impacting the day-to-day experiences and decisions of residents. Addressing the housing crisis becomes not only an imperative for mitigating homelessness but also for fostering inclusive and sustainable communities where individuals can access stable housing and build their lives.',
             location: {
                 center: [-73.97615, 40.71901],
                 zoom: 9.02,
@@ -55,7 +55,7 @@ var config = {
             alignment: 'left',
             hidden: false,
             index: 1,
-            title: 'The Housing Crisis in Amsterdam',
+            title: 'The Housing Crisis in Amsterdam by District',
             image: 'images/source.png',
             description: 'Copy these sections to add to your story.',
             location: {
@@ -80,9 +80,9 @@ var config = {
             alignment: 'right',
             hidden: false,
             index: 2,
-            title: 'Third Title',
+            title: 'NYCHA Housing Stock by Borough',
             image: './path/to/image/source.png',
-            description: 'Copy these sections to add to your story.',
+            description: 'NYCHA Housing Stock by Borough',
             location: {
               center: [-73.97615, 40.71901],
                 zoom: 9.04,
@@ -107,7 +107,7 @@ var config = {
             alignment: 'left',
             hidden: false,
             index: 3,
-            title: 'The Housing Crisis in Amsterdam',
+            title: 'Social Housing Stock by District',
             image: 'images/source.png',
             description: 'Copy these sections to add to your story.',
             location: {
@@ -133,7 +133,7 @@ var config = {
             alignment: 'right',
             hidden: false,
             index: 4,
-            title: 'The Housing Crisis in Amsterdam',
+            title: 'Average Rent Paid for NYCHA Housing by Borough',
             image: 'images/source.png',
             description: 'Copy these sections to add to your story.',
             location: {
@@ -159,7 +159,7 @@ var config = {
             alignment: 'left',
             hidden: false,
             index: 5,
-            title: 'The Housing Crisis in Amsterdam',
+            title: 'Average Cost of Social Housing In Amsterdam\'s Districts',
             image: 'images/source.png',
             description: 'Copy these sections to add to your story.',
             location: {
@@ -246,7 +246,7 @@ var config = {
             onChapterEnter: [],
             onChapterExit: [],
 
-            
+
 render: function () {
     // Create container div
     var container = document.createElement('div');
