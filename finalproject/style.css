@@ -1,7 +1,8 @@
     body {
             margin:0;
             padding:0;
-           font-family: 'Sometype Mono', monospace;
+           font-family: 'Merriweather', serif;
+
         }
 
         a, a:hover, a:visited {
@@ -40,14 +41,14 @@
     font-size: 7vh;
     color: black;
     padding-top: 5vh;
-    margin-left: 10vh; 
-    margin-right: 10vh;/* Adjust the padding as needed */
+    margin-left: 28vh; 
+    margin-right: 25vh;/* Adjust the padding as needed */
 }
 
 #header h2 {
     padding-bottom: 5vh;
-    margin-left: 50vh; 
-    margin-right: 40vh; /* Adjust the padding as needed */
+    margin-left: 28vh; 
+    margin-right: 50vh; /* Adjust the padding as needed */
     color: black;
 }
 
@@ -56,6 +57,7 @@
     text-align: justify;
     margin-left: 15vw;
     margin-right: 15vw;
+    margin-bottom: .2vh;
     color: black;
 }
 
