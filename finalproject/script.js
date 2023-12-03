@@ -249,7 +249,7 @@ var map = new mapboxgl.Map({
 var map2 = new mapboxgl.Map({
     container: 'map2',
     style: 'mapbox://styles/sbf62/clozx8hk700t701qn92q86i3u', // You can change the style URL
-    center: [4.91,52.373],
+    center: [4.913,52.375],
     zoom: 10,
     bearing: config.chapters[0].location.bearing,
     pitch: config.chapters[0].location.pitch,
