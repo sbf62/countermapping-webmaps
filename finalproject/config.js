@@ -1,7 +1,7 @@
 var config = {
     style:  'mapbox://styles/sbf62/clozx8hk700t701qn92q86i3u',
     accessToken: 'pk.eyJ1Ijoic2JmNjIiLCJhIjoiY2xuMXZhaTZkMDIzczJ3cXdmYWt3dTE2NiJ9.0Bwf-GgUm2QzNybs9scQ6Q',
-    showMarkers: true,
+    showMarkers: false,
     markerColor: '#3FB1CE',
     //projection: 'equirectangular',
     //Read more about available projections here
@@ -34,7 +34,7 @@ var config = {
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             location: {
                 center: [-73.97615, 40.71901],
-                zoom: 8.5,
+                zoom: 9.02,
                 pitch: 60,
                 bearing: -43.2,
                 // flyTo additional controls-
@@ -60,7 +60,7 @@ var config = {
             description: 'Copy these sections to add to your story.',
             location: {
                 center: [-73.97615, 40.71901],
-                zoom: 8.5,
+                zoom: 10,
                 pitch: 60,
                 bearing: -43.2,
                 // flyTo additional controls-
@@ -85,7 +85,7 @@ var config = {
             description: 'Copy these sections to add to your story.',
             location: {
               center: [-73.97615, 40.71901],
-                zoom: 8.5,
+                zoom: 9.04,
                 pitch: 60,
                 bearing: -43.2,
                 // flyTo additional controls-
@@ -112,7 +112,7 @@ var config = {
             description: 'Copy these sections to add to your story.',
             location: {
                 center: [-73.97615, 40.71901],
-                zoom: 8.5,
+                zoom: 10.02,
                 pitch: 60,
                 bearing: -43.2,
                 // flyTo additional controls-
@@ -138,7 +138,7 @@ var config = {
             description: 'Copy these sections to add to your story.',
             location: {
                 center: [-73.97615, 40.71901],
-                zoom: 8.5,
+                zoom: 9,
                 pitch: 60,
                 bearing: -43.2,
                 // flyTo additional controls-
@@ -164,7 +164,7 @@ var config = {
             description: 'Copy these sections to add to your story.',
             location: {
                 center: [-73.97615, 40.71901],
-                zoom: 8.5,
+                zoom: 10.04,
                 pitch: 60,
                 bearing: -43.2,
                 // flyTo additional controls-
@@ -245,6 +245,8 @@ var config = {
             callback: '',
             onChapterEnter: [],
             onChapterExit: [],
+
+            
 render: function () {
     // Create container div
     var container = document.createElement('div');
