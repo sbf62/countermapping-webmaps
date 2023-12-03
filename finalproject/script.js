@@ -38,6 +38,13 @@ function setLayerOpacity(layer) {
     }
 }
 
+function setZoomLevel(zoom) {
+    var zoom = config.chapters[chapterIndex].zoom;
+    console.log('Setting Zoom:', zoom);
+    map.setZoom(zoom);
+    map2.setZoom(zoom);
+}
+
 var story = document.getElementById('story');
 var features = document.createElement('div');
 features.setAttribute('id', 'features');
@@ -262,7 +269,7 @@ if (config.showMarkers) {
 var scroller = scrollama();
 var rotationMaps = [map, map2];
 
-map.on("load", function () {
+map.on('style.load', function () {
     if (config.use3dTerrain) {
         map.addSource('mapbox-dem', {
             'type': 'raster-dem',
@@ -305,6 +312,10 @@ scroller
         }
 
         response.element.classList.add('active');
+
+        console.log('Setting Zoom for Chapter:', chapter.title);
+        setZoomLevel(config.chapters.indexOf(chapter));
+
         map[chapter.mapAnimation || 'flyTo'](chapter.location);
 
         // Rotate both maps continuously
@@ -359,7 +370,11 @@ if (chapter.onChapterExit && Array.isArray(chapter.onChapterExit) && chapter.onC
 });
 
 
-
+function setZoomLevel(chapterIndex) {
+    var zoom = config.chapters[chapterIndex].location.zoom;
+    map.setZoom(zoom);
+    map2.setZoom(zoom);
+}
 
 });
 
