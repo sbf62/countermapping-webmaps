@@ -227,7 +227,7 @@ var config = {
         ' Although the length of this process also fluxuates greatly, at the time this housing data was collected (~2010), someone like Alex could expect to wait a 1-3 years. In the mean time they would have to explore other housing options, like co-housing communities or anti-squatting programs.',
         'The Call and Move: (1-2 months):',
         ' After receiving an email about an available apartment, Alex has 1-2 months to visit for a viewing and make a decision.',
-        'Total Time : 1.1 - 3.25 years  Expected Rent: $466-398'
+        'Total Time : 1.1 - 3.25 years  Expected Rent: $398-466'
     ],
     location: {
         center: [-73.97615, 40.71901],
