@@ -135,7 +135,7 @@ var config = {
             index: 4,
             title: 'Average Rent Paid for NYCHA Housing by Borough',
          
-            description: 'The revelation that payments for NYCHA housing rent are the highest in Brooklyn and the lowest in the Bronx, while consistently calculated as 30% of income, carries profound implications for the financial well-being of residents in these boroughs. Despite the standardized percentage model, the higher rent payments in Brooklyn indicate a significant income disparity, potentially placing a heavier financial burden on NYCHA tenants in this borough. This emphasizes the urgent need to address broader economic challenges, such as wage discrepancies or the cost of living, to ensure that even a standardized percentage does not disproportionately impact residents. Conversely, the lower rent payments in the Bronx, while reflective of a more affordable living situation, underscore the need to examine and implement strategies that contribute to income stability and economic empowerment across all boroughs. This data highlights the nuanced nature of housing affordability, necessitating a comprehensive approach that considers both standardized rent calculations and broader socioeconomic factors to promote equitable access to affordable housing throughout New York City.',
+            description: 'The revelation that payments for NYCHA housing rent are the highest in Brooklyn ($549 in 2010) and the lowest in the Bronx ($497 in 2010), while consistently calculated as 30% of income, carries profound implications for the financial well-being of residents in these boroughs. Despite the standardized percentage model, the higher rent payments in Brooklyn indicate a significant income disparity, potentially placing a heavier financial burden on NYCHA tenants in this borough. This emphasizes the urgent need to address broader economic challenges, such as wage discrepancies or the cost of living, to ensure that even a standardized percentage does not disproportionately impact residents. Conversely, the lower rent payments in the Bronx, while reflective of a more affordable living situation, underscore the need to examine and implement strategies that contribute to income stability and economic empowerment across all boroughs. This data highlights the nuanced nature of housing affordability, necessitating a comprehensive approach that considers both standardized rent calculations and broader socioeconomic factors to promote equitable access to affordable housing throughout New York City.',
             location: {
                 center: [-73.97615, 40.71901],
                 zoom: 9,
@@ -161,7 +161,7 @@ var config = {
             index: 5,
             title: 'Average Cost of Social Housing In Amsterdam\'s Districts',
            
-            description: 'The data revealing that Zuidoost has the highest average rent for social housing, while the West district boasts the lowest in Amsterdam, both calculated as a percentage of income, unveils nuanced considerations beyond rent affordability. Despite the standardized rent calculation, the higher rents in Zuidoost may signal additional challenges for social housing tenants, potentially impacting their ability to navigate other elements of the cost of living, such as finding employment or affording essential amenities. Moving to a district with higher average incomes might pose difficulties for residents in Zuidoost, who may face economic disparities and barriers in accessing job opportunities or managing overall living expenses. On the contrary, the lower average rents in the West district may contribute to a more accessible living situation, potentially attracting residents seeking not only affordable housing but also a neighborhood where economic opportunities and the overall cost of living align more favorably. ',
+            description: 'The data revealing that Zuidoost has the highest average rent for social housing ($466 in 2010), while the West district boasts the lowest in Amsterdam ($398 in 2010), both calculated as a percentage of income, unveils nuanced considerations beyond rent affordability. Despite the standardized rent calculation, the higher rents in Zuidoost may signal additional challenges for social housing tenants, potentially impacting their ability to navigate other elements of the cost of living, such as finding employment or affording essential amenities. Moving to a district with higher average incomes might pose difficulties for residents in Zuidoost, who may face economic disparities and barriers in accessing job opportunities or managing overall living expenses. On the contrary, the lower average rents in the West district may contribute to a more accessible living situation, potentially attracting residents seeking not only affordable housing but also a neighborhood where economic opportunities and the overall cost of living align more favorably. ',
             location: {
                 center: [-73.97615, 40.71901],
                 zoom: 10.04,
@@ -217,7 +217,7 @@ var config = {
         ' Although the length of this process fluxuates greatly, at the time this housing data was collected (~2010), someone like Alex could expect to wait 2-5 years. In the mean time they would have to explore other housing options, a homeless shelter would put her on a priority list for NYCHA housing, however is a last resort. She may have to look at other affordable housing options, like hosuing lotteries or section 8 housing in this time.',
         'The Call and Move (1-2 months):',
         ' Once notified, Alex has 1-2 months to make a decision and potentially move into the new apartment.',
-        'Total Time : 2.2 - 5.25 years'
+        'Total Time : 2.2 - 5.25 years  Expected Rent : $497-549'
     ],
     rightText: [
         'Timeline for Social Housing - ',
@@ -227,7 +227,7 @@ var config = {
         ' Although the length of this process also fluxuates greatly, at the time this housing data was collected (~2010), someone like Alex could expect to wait a 1-3 years. In the mean time they would have to explore other housing options, like co-housing communities or anti-squatting programs.',
         'The Call and Move: (1-2 months):',
         ' After receiving an email about an available apartment, Alex has 1-2 months to visit for a viewing and make a decision.',
-        'Total Time : 1.1 - 3.25 years'
+        'Total Time : 1.1 - 3.25 years  Expected Rent: $466-398'
     ],
     location: {
         center: [-73.97615, 40.71901],
