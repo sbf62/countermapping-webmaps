@@ -108,7 +108,7 @@ var config = {
             hidden: false,
             index: 3,
             title: 'Social Housing Stock by District',
-            image: 'images/socialhousepic.png',
+            image: 'images/socialhousingampic.png',
             description: 'The allocation of social housing in Amsterdam unveils a distinct disparity, with Nieuw-West having the highest inventory and Centrum with the lowest. This variation in social housing distribution mirrors the demographic and urban planning differences between these two districts. Nieuw-West, characterized by a mix of residential and industrial areas, holds a greater concentration of social housing, likely driven by considerations of affordability and accessibility for a diverse population. In contrast, Centrum, known for its historic significance and central location, may prioritize other forms of urban development, resulting in a reduced availability of social housing. Recognizing this disparity is crucial for individuals seeking social housing, as it underscores the importance of navigating housing options based on the specific resources and priorities of each district, impacting the choices available to those in search of affordable and socially inclusive living arrangements.',
             location: {
                 center: [-73.97615, 40.71901],
