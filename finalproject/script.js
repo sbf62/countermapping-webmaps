@@ -117,6 +117,11 @@ if (config.para8) {
     header.appendChild(bylineText);
 }
 
+if (config.para9) {
+    var bylineText = document.createElement('p');
+    bylineText.innerText = config.para9;
+    header.appendChild(bylineText);
+}
 
 if (header.innerText.length > 0) {
     header.classList.add(config.theme);
@@ -298,6 +303,8 @@ map.on('style.load', function () {
     }
 
 
+
+
 scroller
     .setup({
         step: '.step',
@@ -319,29 +326,7 @@ scroller
         map[chapter.mapAnimation || 'flyTo'](chapter.location);
 
         // Rotate both maps continuously
-        if (map) {
-            map.once('moveend', () => {
-                const rotateNumber = map.getBearing();
-                map.rotateTo(rotateNumber + 180, {
-                    duration: 30000,
-                    easing: function (t) {
-                        return t;
-                    }
-                });
-            });
-        }
 
-        if (map2) {
-            map2.once('moveend', () => {
-                const rotateNumber = map2.getBearing();
-                map2.rotateTo(rotateNumber + 180, {
-                    duration: 30000,
-                    easing: function (t) {
-                        return t;
-                    }
-                });
-            });
-        }
 
         // Other logic remains unchanged
         if (config.inset) {
@@ -377,6 +362,8 @@ function setZoomLevel(chapterIndex) {
 }
 
 });
+
+
 
 // Setup resize event
 window.addEventListener('resize', scroller.resize);
