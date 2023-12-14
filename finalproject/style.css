@@ -22,6 +22,8 @@
     position: fixed;
 }
 
+
+
         @media (max-width: 500px) {
             #mapInset {
                 display: none;
