@@ -21,6 +21,7 @@ var config = {
 	para6: 'Housing Options -',
 	para7: 'Social housing in Amsterdam includes a range of housing options, from apartments to family homes, catering to various household sizes and needs. Whereas NYCHA provides housing in the form of large-scale apartment complexes, with the aim of addressing the demand for affordable housing in various neighborhoods.',
 	para8: 'Now lets further explore specific indicators of housing crisis in either city!',
+    para9: 'Keep in mind that for these maps, RED represents relatively worse conditions, higher prices, etc. whereas GREEN represents the relativley better conditions.',
 	
   
     chapters: [
